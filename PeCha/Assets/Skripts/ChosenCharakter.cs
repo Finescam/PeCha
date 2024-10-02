@@ -3,12 +3,16 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ChosenCharakter : MonoBehaviour
 {
+    [SerializeField] TMP_InputField age;
+    [SerializeField] TMP_InputField firstName;
+    [SerializeField] TMP_InputField surName;
     [SerializeField] List<TraitData> allTraits;
-   [SerializeField]
-    PlayerCharacter playChar;
+    [SerializeField] PlayerCharacter playChar;
 
     public List<string> chosenTraits;
     public List<float> chosenTraitValues;
@@ -46,5 +50,24 @@ public class ChosenCharakter : MonoBehaviour
             i = i * -1;
 
         return i;
+    }
+
+    public void GetAge()
+    {
+        if (age.text != "")
+            playChar.characterAge = int.Parse(age.text);
+        else
+            playChar.characterAge = 0;
+    }
+
+
+    public void GetName()
+    {
+        playChar.characterName = firstName.text;
+    }
+
+    public void GetSurName()
+    {
+        playChar.characterSurname = surName.text;
     }
 }
