@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacter : ScriptableObject
 {
-   public List<string> prioritizedTraits;
+    public string characterName;
+    public string characterSurname;
+    public List<string> prioritizedTraits;
 }

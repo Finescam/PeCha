@@ -7,6 +7,7 @@ using TMPro;
 public class TraitData : MonoBehaviour
 {
     [Header("Visuals")]
+    [SerializeField] Toggle toggle;
     [SerializeField] Slider slider;
     [SerializeField] TMP_Text traitAText;
     [SerializeField] TMP_Text traitBText;
@@ -28,7 +29,13 @@ public class TraitData : MonoBehaviour
         traitBText.text = traitB;
     }
 
-    public void UpdateUsing()
+    public void ToggleSwitch()
+    {
+        slider.value = 0;
+        UpdateTraitValue();
+    }
+
+    private void UpdateUsing()
     {
         if (traitValue == 0)
         {
@@ -43,9 +50,9 @@ public class TraitData : MonoBehaviour
            
     }
 
-    public void UpdateTraitValue(float sliderValue)
+    public void UpdateTraitValue()
     {
-        traitValue = sliderValue;
+        traitValue = slider.value;
 
         UpdateUsing();
     }
