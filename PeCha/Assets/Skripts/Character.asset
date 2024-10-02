@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7c150b43bfbd948ad60481dce9f688, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
-  chosenTraits:
-  - naiv
-  chosenTraitValue:
-  - -3
+  prioritizedTraits:
+  - "Sch\xFCchtern"
+  - bedacht
+  - "unh\xF6flich"

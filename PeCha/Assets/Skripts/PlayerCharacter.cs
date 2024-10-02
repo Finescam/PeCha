@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class PlayerCharacter : ScriptableObject
 {
-    public List<string> chosenTraits;
-    public List<float> chosenTraitValue;
+   public List<string> prioritizedTraits;
 }
