@@ -1,2 +1,2 @@
-VAR playerName = ""
-LIST characterTraits = (empty)
+VAR playerName = "mia"
+LIST characterTraits = empty

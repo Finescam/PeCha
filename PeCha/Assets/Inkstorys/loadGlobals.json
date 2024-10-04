@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"playerName"},{"list":{"characterTraits.empty":1}},{"VAR=":"characterTraits"},"/ev","end",null],"#f":1}],"listDefs":{"characterTraits":{"empty":1}}}
+﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^mia","/str",{"VAR=":"playerName"},{"list":{},"origins":["characterTraits"]},{"VAR=":"characterTraits"},"/ev","end",null],"#f":1}],"listDefs":{"characterTraits":{"empty":1}}}

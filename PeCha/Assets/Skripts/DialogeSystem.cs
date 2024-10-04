@@ -37,7 +37,8 @@ public class DialogeSystem : MonoBehaviour
 
     private void Start()
     {
-        //inkVars.filltraitList(playChar.prioritizedTraits);
+        //inkVars.SetListInInk(playChar.prioritizedTraits);
+        
         dialogeIsPlaying = false;
         NPCDialogePanel.SetActive(false);
 
@@ -69,6 +70,11 @@ public class DialogeSystem : MonoBehaviour
         }
     }
 
+    public void SetPlayerName(string playname)
+    {
+        currentInkStory.variablesState["playerName"] = playname;
+    }
+
     public void LoadDialoge()
     {
         if (i < inkJSONs.Count -1)
@@ -84,6 +90,7 @@ public class DialogeSystem : MonoBehaviour
         currentInkStory = new Story(inkJSON.text);
         dialogeIsPlaying = true;
         inkVars.StartListening(currentInkStory);
+        SetPlayerName(playChar.characterName);
 
         ContinueDialoge();       
     }
