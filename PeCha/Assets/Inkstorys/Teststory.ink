@@ -1,5 +1,6 @@
 INCLUDE globals.ink
 This is my text
+You have the following traits: {characterTraits}
 This is the second text, dear {playerName}?
 + [it is indeed]
 fair enough

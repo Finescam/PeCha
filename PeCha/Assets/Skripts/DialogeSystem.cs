@@ -14,12 +14,16 @@ public class DialogeSystem : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
 
     [Header("Ink")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
     [SerializeField] private List<TextAsset> inkJSONs;
     public int i; //Where we are in the story/which story to load from inkJSON list
     private Story currentInkStory;
+    private InkVariables inkVars;
     private bool dialogeIsPlaying;
 
+    [Header("SriptRefs")]
     private static DialogeSystem instance;
+    [SerializeField] PlayerCharacter playChar;
 
     private void Awake()
     {
@@ -28,13 +32,19 @@ public class DialogeSystem : MonoBehaviour
         else
             Debug.LogWarning("More than one DialogeSystem");
 
+        inkVars = new InkVariables(loadGlobalsJSON);
+    }
+
+    private void Start()
+    {
+        //inkVars.filltraitList(playChar.prioritizedTraits);
         dialogeIsPlaying = false;
         NPCDialogePanel.SetActive(false);
 
         //Aline choicestext with UI
         choicesText = new TextMeshProUGUI[choicesUI.Length];
         int index = 0;
-        foreach(GameObject choice in choicesUI)
+        foreach (GameObject choice in choicesUI)
         {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
@@ -46,10 +56,14 @@ public class DialogeSystem : MonoBehaviour
         if (!dialogeIsPlaying)
             LoadDialoge();
 
-        if (Input.GetKeyDown(KeyCode.Space) )
+        //dont continue story if there are choices
+        if (currentInkStory.currentChoices.Count != 0)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             if (currentInkStory != null)
-                ContinueDialoge(currentInkStory);
+                ContinueDialoge();
             else
                 ExitDialoge();
         }
@@ -69,20 +83,22 @@ public class DialogeSystem : MonoBehaviour
         NPCDialogePanel.SetActive(true);
         currentInkStory = new Story(inkJSON.text);
         dialogeIsPlaying = true;
+        inkVars.StartListening(currentInkStory);
 
-        ContinueDialoge(currentInkStory);       
+        ContinueDialoge();       
     }
 
     public void ExitDialoge()
     {
+        inkVars.StopListening(currentInkStory);
         dialogeIsPlaying = false;
         NPCDialogePanel.SetActive(false);
         NPCDialogeText.text = "";
     }
 
-    private void ContinueDialoge(Story story)
+    private void ContinueDialoge()
     {
-        if (story.canContinue)
+        if (currentInkStory.canContinue)
         {
             NPCDialogeText.text = currentInkStory.Continue();
             DisplayChoices();
@@ -119,6 +135,17 @@ public class DialogeSystem : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentInkStory.ChooseChoiceIndex(choiceIndex);
-        ContinueDialoge(currentInkStory);
+        ContinueDialoge();
+    }
+
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        inkVars.variables.TryGetValue(variableName, out variableValue);
+        if(variableValue == null)
+        {
+            Debug.LogWarning("Ink Variable was null: " + variableName);
+        }
+        return variableValue;
     }
 }
