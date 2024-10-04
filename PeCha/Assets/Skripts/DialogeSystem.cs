@@ -16,6 +16,7 @@ public class DialogeSystem : MonoBehaviour
     [Header("Ink")]
     [SerializeField] private TextAsset loadGlobalsJSON;
     [SerializeField] private List<TextAsset> inkJSONs;
+    [SerializeField] string inkVariables;
     public int i; //Where we are in the story/which story to load from inkJSON list
     private Story currentInkStory;
     private InkVariables inkVars;
@@ -70,9 +71,19 @@ public class DialogeSystem : MonoBehaviour
         }
     }
 
-    public void SetPlayerName(string playname)
+    private void SetPlayerName(string playname)
     {
         currentInkStory.variablesState["playerName"] = playname;
+    }
+
+    public void FillTraitList(List<string> traits)
+    {
+        var currentTraits = new Ink.Runtime.InkList("characterTraits", currentInkStory);
+        foreach (string trait in traits)
+        {
+            currentTraits.AddItem(trait);
+        }
+        currentInkStory.variablesState["characterTraits"] = currentTraits;
     }
 
     public void LoadDialoge()
@@ -91,6 +102,7 @@ public class DialogeSystem : MonoBehaviour
         dialogeIsPlaying = true;
         inkVars.StartListening(currentInkStory);
         SetPlayerName(playChar.characterName);
+        FillTraitList(playChar.prioritizedTraits);
 
         ContinueDialoge();       
     }

@@ -19,26 +19,11 @@ public class InkVariables
         }
     }
 
-    public void SetPlayerName(string playname)
-    {
-        globalVariableStory.variablesState["playerName"] = "Gregor";
-    }
-
-    public void SetListInInk(List<string> traits)
-    {
-        string concentratedList = string.Join(",", traits);
-        globalVariableStory.variablesState["characterTraits"] = concentratedList;
-    }
 
     //public void filltraitList(List<string> traits)
     //{
-    //    Ink.Runtime.InkList inkTraitList = new Ink.Runtime.InkList(globalVariableStory.story)
-
-    //    foreach (string trait in traits)
-    //    {
-    //        globalVariableStory.variablesState["characterTraits"] = trait;
-    //    }
-    //}
+    //    var currentTraits = new Ink.Runtime.InkList("characterTraits", globalVariableStory)
+    //}        
 
     public void StartListening(Story story)
     {
