@@ -19,12 +19,6 @@ public class InkVariables
         }
     }
 
-
-    //public void filltraitList(List<string> traits)
-    //{
-    //    var currentTraits = new Ink.Runtime.InkList("characterTraits", globalVariableStory)
-    //}        
-
     public void StartListening(Story story)
     {
         VariablesToStory(story);

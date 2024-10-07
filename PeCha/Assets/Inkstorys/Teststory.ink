@@ -1,7 +1,7 @@
 INCLUDE globals.ink
 This is my text
-You have the following traits: {characterTraits}
-This is the second text, dear {playerName}?
+You have the following traits: {Traits}
+This is the second text, dear {Name}?
 + [it is indeed]
 fair enough
 ->third
@@ -14,6 +14,4 @@ it is.
 
 ===third===
 This is third
-and a fourth
-and so on
 -> END

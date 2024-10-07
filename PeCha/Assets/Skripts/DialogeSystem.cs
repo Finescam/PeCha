@@ -38,8 +38,6 @@ public class DialogeSystem : MonoBehaviour
 
     private void Start()
     {
-        //inkVars.SetListInInk(playChar.prioritizedTraits);
-        
         dialogeIsPlaying = false;
         NPCDialogePanel.SetActive(false);
 
@@ -71,19 +69,28 @@ public class DialogeSystem : MonoBehaviour
         }
     }
 
-    private void SetPlayerName(string playname)
+    private void SetInkVariable(string inkVar, string charVar)
     {
-        currentInkStory.variablesState["playerName"] = playname;
+        currentInkStory.variablesState[inkVar] = charVar;
     }
 
-    public void FillTraitList(List<string> traits)
+
+    private void FillTraitList(List<string> traits)
     {
-        var currentTraits = new Ink.Runtime.InkList("characterTraits", currentInkStory);
+        var currentTraits = new Ink.Runtime.InkList("Traits", currentInkStory);
         foreach (string trait in traits)
         {
             currentTraits.AddItem(trait);
         }
-        currentInkStory.variablesState["characterTraits"] = currentTraits;
+        currentInkStory.variablesState["Traits"] = currentTraits;
+    }
+
+    private void LoadCharacter()
+    {
+        SetInkVariable("Name", playChar.characterName);
+        SetInkVariable("Surname", playChar.characterSurname);
+        SetInkVariable("Age", playChar.characterAge.ToString());
+        FillTraitList(playChar.prioritizedTraits);
     }
 
     public void LoadDialoge()
@@ -101,8 +108,7 @@ public class DialogeSystem : MonoBehaviour
         currentInkStory = new Story(inkJSON.text);
         dialogeIsPlaying = true;
         inkVars.StartListening(currentInkStory);
-        SetPlayerName(playChar.characterName);
-        FillTraitList(playChar.prioritizedTraits);
+        LoadCharacter();
 
         ContinueDialoge();       
     }

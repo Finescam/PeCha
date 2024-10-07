@@ -13,35 +13,16 @@ public class ChosenCharakter : MonoBehaviour
     [SerializeField] TMP_InputField surName;
     [SerializeField] List<TraitData> allTraits;
     [SerializeField] public PlayerCharacter playChar;
+    [SerializeField] WarningPopUp warningPopUp;
 
     public List<string> chosenTraits;
     public List<float> chosenTraitValues;
 
     public void createCharacter()
     {
-        chosenTraits.Clear();
-        chosenTraitValues.Clear();
-
-        foreach (TraitData trait in allTraits)
-        {
-            trait.UpdateChosenTrait();
-
-            if (trait.usingTrait)
-            {
-                chosenTraits.Add(trait.chosenTrait);
-                chosenTraitValues.Add(turnValuePositive(trait.traitValue));
-            }
-        }
-
-        sortTraitPriority();
-    }
-
-    public void sortTraitPriority()
-    {
-        var combinedList = chosenTraits.Zip(chosenTraitValues, (traits, values) => new { Trait = traits, Value = values });
-        var sortedList = combinedList.OrderByDescending(item => item.Value).ToList();
-
-        playChar.prioritizedTraits = sortedList.Select(item => item.Trait).ToList();
+        GetChosenTraits();
+        //check if everything is filled out, else popup note
+        StartCoroutine(warningPopUp.panelFadeout());        
     }
 
     public float turnValuePositive(float i)
@@ -58,8 +39,9 @@ public class ChosenCharakter : MonoBehaviour
             playChar.characterAge = int.Parse(age.text);
         else
             playChar.characterAge = 0;
-    }
 
+        //let note appear if character <18 or >90 (not possible)
+    }
 
     public void GetName()
     {
@@ -70,4 +52,28 @@ public class ChosenCharakter : MonoBehaviour
     {
         playChar.characterSurname = surName.text;
     }
+
+    private void GetChosenTraits()
+    {
+        chosenTraits.Clear();
+        chosenTraitValues.Clear();
+
+        foreach (TraitData trait in allTraits)
+        {
+            trait.UpdateChosenTrait();
+
+            if (trait.usingTrait)
+            {
+                chosenTraits.Add(trait.chosenTrait);
+                chosenTraitValues.Add(turnValuePositive(trait.traitValue));
+            }
+        }
+
+        //sort trait priority and add them to the final list
+        var combinedList = chosenTraits.Zip(chosenTraitValues, (traits, values) => new { Trait = traits, Value = values });
+        var sortedList = combinedList.OrderByDescending(item => item.Value).ToList();
+
+        playChar.prioritizedTraits = sortedList.Select(item => item.Trait).ToList();
+    }
+
 }
