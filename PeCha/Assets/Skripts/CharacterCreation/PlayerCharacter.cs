@@ -9,8 +9,5 @@ public class PlayerCharacter : ScriptableObject
     public string characterSurname;
     public List<string> prioritizedTraits;
 
-    public int body;
-    public int hair;
-    public int cloth;
-    public int face; //schaumamal 
+    public List<int> visualFeatures;
 }
