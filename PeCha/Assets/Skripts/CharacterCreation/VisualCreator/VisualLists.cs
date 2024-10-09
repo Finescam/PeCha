@@ -12,4 +12,5 @@ public class VisualLists : ScriptableObject
     public List<Sprite> noseSpritesFront;
     public List<Sprite> mouthSpritesFront;
     public List<Sprite> clothesSpritesFront;
+    public List<List<Sprite>> allVisualLists = new List<List<Sprite>>();
 }

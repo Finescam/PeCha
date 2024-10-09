@@ -8,7 +8,6 @@ public class VisualCharacter : MonoBehaviour
 
     [SerializeField] VisualLists visLists;
     [SerializeField] PlayerCharacter playChar;
-    public List<List<Sprite>> allVisLists = new List<List<Sprite>>();
     [SerializeField] List<GameObject> featureButtons;
     [SerializeField] List<SpriteRenderer> spriteRenderers; 
 
@@ -28,7 +27,7 @@ public class VisualCharacter : MonoBehaviour
         foreach (SpriteRenderer sprite in spriteRenderers)
         {
             //set each spriterenderers sprite to be the very first sprite out of all lists
-            sprite.sprite = allVisLists[i][0];
+            sprite.sprite = visLists.allVisualLists[i][0];
             i++;
         }
     }
@@ -36,13 +35,13 @@ public class VisualCharacter : MonoBehaviour
     private void FillAllVisLists()
     {
         //add every "front" list in visList here 
-        allVisLists.Add(visLists.bodySpritesFront);
-        allVisLists.Add(visLists.hairSpritesFront);
-        allVisLists.Add(visLists.eyeSpritesFront);
-        allVisLists.Add(visLists.browSpritesFront);
-        allVisLists.Add(visLists.noseSpritesFront);
-        allVisLists.Add(visLists.mouthSpritesFront);
-        allVisLists.Add(visLists.clothesSpritesFront);
+        visLists.allVisualLists.Add(visLists.bodySpritesFront);
+        visLists.allVisualLists.Add(visLists.hairSpritesFront);
+        visLists.allVisualLists.Add(visLists.eyeSpritesFront);
+        visLists.allVisualLists.Add(visLists.browSpritesFront);
+        visLists.allVisualLists.Add(visLists.noseSpritesFront);
+        visLists.allVisualLists.Add(visLists.mouthSpritesFront);
+        visLists.allVisualLists.Add(visLists.clothesSpritesFront);
     }
 
     private void ChangeVisual(List<Sprite> spriteList, SpriteRenderer sprite, int index)
@@ -68,7 +67,7 @@ public class VisualCharacter : MonoBehaviour
     public void ChooseFeature(int index)
     {
         //use the currentVisual to pick what sprite we want to edit with which list from all VisuallLists, then set it to be the one with the handeled in index
-        ChangeVisual(allVisLists[currentVisual], spriteRenderers[currentVisual], index);
+        ChangeVisual(visLists.allVisualLists[currentVisual], spriteRenderers[currentVisual], index);
     }
 
     public void AcceptVisuals()
@@ -76,9 +75,9 @@ public class VisualCharacter : MonoBehaviour
         //clear list for good measures
         playChar.visualFeatures.Clear();
         //add for each list the index of the chosen feature, so later i can read those for other sprites too
-        for (int i = 0; i < allVisLists.Count; i++)
+        for (int i = 0; i < visLists.allVisualLists.Count; i++)
         {
-            playChar.visualFeatures.Add(allVisLists[i].IndexOf(spriteRenderers[i].sprite));
+            playChar.visualFeatures.Add(visLists.allVisualLists[i].IndexOf(spriteRenderers[i].sprite));
         }
     }
 }
