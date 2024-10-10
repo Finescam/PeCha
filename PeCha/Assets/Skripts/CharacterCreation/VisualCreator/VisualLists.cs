@@ -11,8 +11,8 @@ public class VisualLists : MonoBehaviour
     public List<Sprite> noseSprites;
     public List<Sprite> mouthSprites;
     public List<Sprite> detailSprites;
-    public List<Sprite> accessoirySprites;
-    public List<List<Sprite>> allVisualLists = new List<List<Sprite>>();
+    public List<Sprite> accessorySprites;
+    public List<List<Sprite>> allSpriteLists = new List<List<Sprite>>();
 
     public List<Color32> bodyColor;
     public List<Color32> hairColor;
@@ -20,23 +20,22 @@ public class VisualLists : MonoBehaviour
 
     private void Awake()
     {
-        FillAllVisLists();
+        FillAllLists();
     }
 
-    private void FillAllVisLists()
+    private void FillAllLists()
     {
-        //add every sprite list in visList here 
-        allVisualLists.Add(bodySprites);
-        allVisualLists.Add(hairSprites);
-        allVisualLists.Add(eyeSprites);
-        allVisualLists.Add(browSprites);
-        allVisualLists.Add(noseSprites);
-        allVisualLists.Add(mouthSprites);
-        allVisualLists.Add(detailSprites);
-        allVisualLists.Add(accessoirySprites);
+        var spriteLists = new List<Sprite>[]
+        {
+            bodySprites, hairSprites, eyeSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites
+        };
 
-        //add every colorlist in vislist here
-        allColorLists.Add(bodyColor);
-        allColorLists.Add(hairColor);
+        var colorLists = new List<Color32>[]
+        {
+            bodyColor, hairColor
+        };
+
+        allSpriteLists.AddRange(spriteLists);
+        allColorLists.AddRange(colorLists);
     }
 }

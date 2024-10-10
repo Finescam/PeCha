@@ -28,13 +28,13 @@ public class VisualCharacter : MonoBehaviour
         foreach (SpriteRenderer sprite in spriteRenderers)
         {
             //set each spriterenderers sprite to be the very first sprite out of all lists
-            sprite.sprite = visLists.allVisualLists[i][0];
+            sprite.sprite = visLists.allSpriteLists[i][0];
             sprite.color = Color.white;
             i++;
         }
     }
 
-    
+
 
     private void ChangeVisual(List<Sprite> spriteList, SpriteRenderer sprite, int index)
     {
@@ -63,7 +63,7 @@ public class VisualCharacter : MonoBehaviour
     public void ChooseFeature(int index)
     {
         //use the currentVisual to pick what sprite we want to edit with which list from all VisuallLists, then set it to be the one with the handeled in index
-        ChangeVisual(visLists.allVisualLists[currentVisual], spriteRenderers[currentVisual], index);
+        ChangeVisual(visLists.allSpriteLists[currentVisual], spriteRenderers[currentVisual], index);
     }
 
     //Color in my sprite 

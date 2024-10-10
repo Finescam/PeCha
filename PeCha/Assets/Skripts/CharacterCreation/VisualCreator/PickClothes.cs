@@ -12,6 +12,11 @@ public class PickClothes : MonoBehaviour
         visChar = this.GetComponent<VisualCharacter>();
     }
 
+    public void loadClothes(int index)
+    {
+        //clothesSpriteRen.sprite = 
+    }
+
     int CurrentBodyType()
     {
        return visChar.visLists.bodySprites.IndexOf(clothesSpriteRen.sprite);

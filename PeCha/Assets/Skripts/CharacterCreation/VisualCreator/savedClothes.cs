@@ -10,4 +10,15 @@ public class savedClothes: MonoBehaviour
     public Sprite[] bodytype3Clothes;
     public Sprite[] bodytype4Clothes;
     public Sprite[] bodytype5Clothes;
+    public List<Sprite[]> allBodytypeClothes = new List<Sprite[]>();
+
+    private void Awake()
+    {
+        
+    }
+
+    void FillAllListList()
+    {
+        //all
+    }
 }
