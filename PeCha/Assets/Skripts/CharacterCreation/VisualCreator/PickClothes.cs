@@ -12,8 +12,8 @@ public class PickClothes : MonoBehaviour
         visChar = this.GetComponent<VisualCharacter>();
     }
 
-    void CheckBodyType()
+    int CurrentBodyType()
     {
-
+       return visChar.visLists.bodySprites.IndexOf(clothesSpriteRen.sprite);
     }
 }
