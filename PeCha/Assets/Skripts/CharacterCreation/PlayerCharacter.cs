@@ -10,4 +10,5 @@ public class PlayerCharacter : ScriptableObject
     public List<string> prioritizedTraits;
 
     public List<int> visualFeatures;
+    public List<int> colorOfFeature;
 }

@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a57048c2419d754e8c406d5bcc4aef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visList: {fileID: 11400000, guid: b28a3a881cce560448e9974c88e898ca, type: 2}
+  frontVisList: {fileID: 11400000, guid: b28a3a881cce560448e9974c88e898ca, type: 2}
   playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
   playerSprites:
   - {fileID: 769720226}

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7c150b43bfbd948ad60481dce9f688, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
-  characterAge: 0
-  characterName: 
-  characterSurname: 
-  prioritizedTraits: []
-  visualFeatures: 
+  characterAge: 34
+  characterName: Fs
+  characterSurname: Sdf
+  prioritizedTraits:
+  - "Sch\xFCchtern"
+  visualFeatures: 04000000000000000000000000000000000000000000000000000000
+  colorOfFeature: 0600000000000000

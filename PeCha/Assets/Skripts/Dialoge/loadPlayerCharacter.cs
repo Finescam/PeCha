@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class loadPlayerCharacter : MonoBehaviour
 {
-    [SerializeField] VisualLists visList;
+    [SerializeField] VisualLists frontVisList;
     [SerializeField] PlayerCharacter playChar;
     [SerializeField] List<SpriteRenderer> playerSprites;
 
@@ -12,7 +12,12 @@ public class loadPlayerCharacter : MonoBehaviour
     {
         for (int i = 0; i < playerSprites.Count; i++)
         {
-            playerSprites[i].sprite = visList.allVisualLists[i][playChar.visualFeatures[i]];
+            playerSprites[i].sprite = frontVisList.allVisualLists[i][playChar.visualFeatures[i]];
+        }
+
+        for (int i = 0; i < frontVisList.allColorLists.Count; i++)
+        {
+            playerSprites[i].color = frontVisList.allColorLists[i][playChar.colorOfFeature[i]];
         }
     }
 
