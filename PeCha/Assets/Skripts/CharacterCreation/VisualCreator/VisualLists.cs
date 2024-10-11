@@ -19,6 +19,11 @@ public class VisualLists : MonoBehaviour
 
     public List<Color32> bodyColor;
     public List<Color32> hairColor;
+    public List<Color32> eyeColor;
+    public List<Color32> browColor;
+    public List<Color32> noseColor;
+    public List<Color32> mouthColor;
+    public List<Color32> detailColor;
     public List<List<Color32>> allColorLists;
 
     private void Awake()
@@ -38,7 +43,7 @@ public class VisualLists : MonoBehaviour
 
         allColorLists = new List<List<Color32>>
         {
-            bodyColor, hairColor
+            bodyColor, hairColor, eyeColor, browColor, noseColor, mouthColor, detailColor
         };
     }
 }

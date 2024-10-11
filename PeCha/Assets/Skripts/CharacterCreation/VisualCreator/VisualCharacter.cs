@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisualCharacter : MonoBehaviour
 {
@@ -55,8 +56,10 @@ public class VisualCharacter : MonoBehaviour
         featureButtons[visual].SetActive(true);
 
         //display available color if available
-        if(visual < visLists.allColorLists.Count)
-        coloring.ColorButtonsIn(visLists.allColorLists[visual]);
+        if (visual < visLists.allColorLists.Count)
+            coloring.ColorButtonsIn(visLists.allColorLists[visual]);
+        else
+            coloring.TurnButtonsOff();
 
         //save current Visuals for other functions to use
         currentVisual = visual;

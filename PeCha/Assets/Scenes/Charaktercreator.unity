@@ -226,17 +226,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   eyeSprites:
-  - {fileID: 21300000, guid: 216c53aef79eaaf40a1800cc5e542dc3, type: 3}
+  - {fileID: 21300000, guid: aae77134a32771e408f7feb50610fc6f, type: 3}
   - {fileID: 21300000, guid: f082e69f825d0aa44b687e592731c0a8, type: 3}
   irisSprites:
-  - {fileID: 21300000, guid: 76beef9fdae7b48468ddf07d0400a374, type: 3}
+  - {fileID: 21300000, guid: 013ae514495ba78489cb09e3e8135c61, type: 3}
   - {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
   browSprites:
   - {fileID: 0}
   noseSprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 49662214528920d4286d1f422fad668a, type: 3}
   mouthSprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: baed49574b7c45148b29cd926e9463e5, type: 3}
   detailSprites:
   - {fileID: 0}
   accessorySprites:
@@ -267,6 +267,31 @@ MonoBehaviour:
   - serializedVersion: 2
     rgba: 4281219656
   hairColor:
+  - serializedVersion: 2
+    rgba: 2895065
+  eyeColor:
+  - serializedVersion: 2
+    rgba: 4278796372
+  - serializedVersion: 2
+    rgba: 4288757313
+  - serializedVersion: 2
+    rgba: 4282538300
+  browColor:
+  - serializedVersion: 2
+    rgba: 0
+  noseColor:
+  - serializedVersion: 2
+    rgba: 0
+  mouthColor:
+  - serializedVersion: 2
+    rgba: 4286414248
+  - serializedVersion: 2
+    rgba: 4282861471
+  - serializedVersion: 2
+    rgba: 4279974788
+  - serializedVersion: 2
+    rgba: 4279773261
+  detailColor:
   - serializedVersion: 2
     rgba: 0
 --- !u!4 &40979123
@@ -320,8 +345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.16028, y: 14.907288}
-  m_SizeDelta: {x: 57.4564, y: 59.5054}
+  m_AnchoredPosition: {x: 184, y: 239}
+  m_SizeDelta: {x: 168.2407, y: 177.2136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &44419750
 MonoBehaviour:
@@ -399,7 +424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0e92ddf428f3da4abe78b8ef60e2a84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d2e0e5ec10d90b449897b2a0d88c898, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -745,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &92212598
 Transform:
   m_ObjectHideFlags: 0
@@ -802,7 +827,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baed49574b7c45148b29cd926e9463e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -828,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &115815059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2173,8 +2198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99.4, y: 45.8}
-  m_SizeDelta: {x: 57.4564, y: 59.5054}
+  m_AnchoredPosition: {x: 182.8299, y: 73.38027}
+  m_SizeDelta: {x: 173.1984, y: 182.6753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263582910
 MonoBehaviour:
@@ -2264,7 +2289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46d5b7ee1aaae3c4d9fd3a54774428d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21c80294318ba294086a251100cb7ef2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2453,7 +2478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172, y: 44.6}
+  m_AnchoredPosition: {x: 333, y: 96.6}
   m_SizeDelta: {x: 57.4564, y: 59.5054}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285439323
@@ -4614,7 +4639,7 @@ GameObject:
   - component: {fileID: 538567497}
   - component: {fileID: 538567496}
   m_Layer: 5
-  m_Name: nose1
+  m_Name: nose0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4637,8 +4662,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.16028, y: 14.907288}
-  m_SizeDelta: {x: 57.4564, y: 59.5054}
+  m_AnchoredPosition: {x: 188.11443, y: 185.00937}
+  m_SizeDelta: {x: 168.7997, y: 160.6412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538567496
 MonoBehaviour:
@@ -4716,7 +4741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddf2e76e8a1f88f46ae1e42277850b48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf2ee92cbe37775469978c6763e49396, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6494,7 +6519,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aae77134a32771e408f7feb50610fc6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9611,8 +9636,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 013ae514495ba78489cb09e3e8135c61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9992,7 +10017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1715916131
 Transform:
   m_ObjectHideFlags: 0
@@ -10049,7 +10074,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49662214528920d4286d1f422fad668a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

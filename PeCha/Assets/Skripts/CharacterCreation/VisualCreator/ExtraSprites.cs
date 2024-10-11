@@ -9,7 +9,7 @@ public class ExtraSprites : MonoBehaviour
     public SpriteRenderer clothesSpriteRen;
     public SpriteRenderer eyesSpriteRen;
 
-    private void Start()
+    private void Awake()
     {
         visLists = VisualLists.Instance;
         visChar = this.GetComponent<VisualCharacter>();
