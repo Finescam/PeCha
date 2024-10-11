@@ -6,8 +6,8 @@ public class ExtraSprites : MonoBehaviour
 {
     VisualLists visLists;
     VisualCharacter visChar;
-    [SerializeField] SpriteRenderer clothesSpriteRen;
-    [SerializeField] SpriteRenderer eyesSpriteRen;
+    public SpriteRenderer clothesSpriteRen;
+    public SpriteRenderer eyesSpriteRen;
 
     private void Start()
     {

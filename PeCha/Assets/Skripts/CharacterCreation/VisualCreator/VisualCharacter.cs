@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VisualCharacter : MonoBehaviour
 {
-    // 0 = Body, 1 = Hair, 2 = Eyes, 3 = Brows, 4 = Nose, 5 = Mouth, 6 = Details, 7 = Accessoiry
+    // 0 = Body, 1 = Hair, 2 = Iris, 3 = Brows, 4 = Nose, 5 = Mouth, 6 = Details, 7 = Accessoiry, 8 = Eyes, 9 = Clothes
 
     VisualLists visLists;
     ExtraSprites exSprites;
@@ -86,5 +86,7 @@ public class VisualCharacter : MonoBehaviour
             playChar.visualFeatures.Add(spriteRenderers[i].sprite);
             playChar.colorOfFeature.Add(spriteRenderers[i].color);
         }
+        playChar.visualFeatures.Add(exSprites.eyesSpriteRen.sprite);
+        playChar.visualFeatures.Add(exSprites.clothesSpriteRen.sprite);
     }
 }
