@@ -6,16 +6,19 @@ public class VisualCharacter : MonoBehaviour
 {
     // 0 = Body, 1 = Hair, 2 = Eyes, 3 = Brows, 4 = Nose, 5 = Mouth, 6 = Details, 7 = Accessoiry
 
-    [SerializeField] public VisualLists visLists;
+    VisualLists visLists;
+    ExtraSprites exSprites;
     [SerializeField] PlayerCharacter playChar;
     private Coloring coloring;
     [SerializeField] List<GameObject> featureButtons;
-    [SerializeField] List<SpriteRenderer> spriteRenderers; 
+    [SerializeField] public List<SpriteRenderer> spriteRenderers; 
 
     public int currentVisual = 0;
 
     private void Start()
     {
+        exSprites = GetComponent<ExtraSprites>();
+        visLists = VisualLists.Instance;
         coloring = this.GetComponent<Coloring>();
         //start on bodys because its the deafault currentValue and else it would shoot out of range exceptions.
         ChooseVisual(0);
@@ -32,9 +35,8 @@ public class VisualCharacter : MonoBehaviour
             sprite.color = Color.white;
             i++;
         }
+        exSprites.LoadAccordingEyes();
     }
-
-
 
     private void ChangeVisual(List<Sprite> spriteList, SpriteRenderer sprite, int index)
     {

@@ -6,12 +6,11 @@ using TMPro;
 
 public class Coloring : MonoBehaviour
 {
-    [SerializeField] VisualLists visList;
     [SerializeField] List<Button> colorButtons;
 
     private void Start()
     {
-        ColorButtonsIn(visList.bodyColor);
+        ColorButtonsIn(VisualLists.Instance.bodyColor);
     }
 
     public void ColorButtonsIn(List<Color32> currentList)

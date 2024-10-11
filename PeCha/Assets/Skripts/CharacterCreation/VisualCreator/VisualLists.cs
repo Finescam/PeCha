@@ -4,38 +4,41 @@ using UnityEngine;
 
 public class VisualLists : MonoBehaviour
 {
+    public static VisualLists Instance;
+
     public List<Sprite> bodySprites;
     public List<Sprite> hairSprites;
     public List<Sprite> eyeSprites;
+    public List<Sprite> irisSprites;
     public List<Sprite> browSprites;
     public List<Sprite> noseSprites;
     public List<Sprite> mouthSprites;
     public List<Sprite> detailSprites;
     public List<Sprite> accessorySprites;
-    public List<List<Sprite>> allSpriteLists = new List<List<Sprite>>();
+    public List<List<Sprite>> allSpriteLists;
 
     public List<Color32> bodyColor;
     public List<Color32> hairColor;
-    public List<List<Color32>> allColorLists = new List<List<Color32>>();
+    public List<List<Color32>> allColorLists;
 
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+
         FillAllLists();
     }
 
     private void FillAllLists()
     {
-        var spriteLists = new List<Sprite>[]
+        allSpriteLists = new List<List<Sprite>>
         {
-            bodySprites, hairSprites, eyeSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites
+            bodySprites, hairSprites, irisSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites
         };
 
-        var colorLists = new List<Color32>[]
+        allColorLists = new List<List<Color32>>
         {
             bodyColor, hairColor
         };
-
-        allSpriteLists.AddRange(spriteLists);
-        allColorLists.AddRange(colorLists);
     }
 }
