@@ -594,7 +594,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1710,7 +1710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a57048c2419d754e8c406d5bcc4aef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontVisList: {fileID: 11400000, guid: b28a3a881cce560448e9974c88e898ca, type: 2}
   playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
   playerSprites:
   - {fileID: 1767619912}
@@ -1721,8 +1720,8 @@ MonoBehaviour:
   - {fileID: 8177680}
   - {fileID: 790516718}
   - {fileID: 1622151429}
-  - {fileID: 602342605}
   - {fileID: 648202842}
+  - {fileID: 602342605}
 --- !u!1 &989294254
 GameObject:
   m_ObjectHideFlags: 0

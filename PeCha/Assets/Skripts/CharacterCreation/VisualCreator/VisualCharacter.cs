@@ -33,7 +33,8 @@ public class VisualCharacter : MonoBehaviour
         {
             //set each spriterenderers sprite to be the very first sprite out of all lists
             sprite.sprite = visLists.allSpriteLists[i][0];
-            sprite.color = Color.white;
+            if (i < visLists.allColorLists.Count) 
+            sprite.color = visLists.allColorLists[i][0];
             i++;
         }
         exSprites.LoadAccordingEyes();

@@ -1,6 +1,11 @@
 INCLUDE globals.ink
-This is my text
-You have the following traits: {Traits}
+Hi, I am an NPC.
+I guess you are {Name}?
+{   
+    -Traits has Unhöflich:
+    + Who wants to know?
+    ->third
+}
 This is the second text, dear {Name}?
 + [it is indeed]
 fair enough

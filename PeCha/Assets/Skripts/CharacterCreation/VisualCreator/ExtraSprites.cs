@@ -8,6 +8,7 @@ public class ExtraSprites : MonoBehaviour
     VisualCharacter visChar;
     public SpriteRenderer clothesSpriteRen;
     public SpriteRenderer eyesSpriteRen;
+    private int currentClothes;
 
     private void Awake()
     {
@@ -17,7 +18,13 @@ public class ExtraSprites : MonoBehaviour
 
     public void loadClothes(int index)
     {
-        clothesSpriteRen.sprite = savedClothes.Instance.allBodytypeClothes[CurrentBodyType()][index];
+        currentClothes = index;
+        clothesSpriteRen.sprite = savedClothes.Instance.allBodytypeClothes[CurrentBodyType()][currentClothes];
+    }
+
+    public void fixClothes()
+    {
+        loadClothes(currentClothes);
     }
 
     public void LoadAccordingEyes()

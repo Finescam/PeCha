@@ -69,30 +69,6 @@ public class DialogeSystem : MonoBehaviour
         }
     }
 
-    private void SetInkVariable(string inkVar, string charVar)
-    {
-        currentInkStory.variablesState[inkVar] = charVar;
-    }
-
-
-    private void FillTraitList(List<string> traits)
-    {
-        var currentTraits = new Ink.Runtime.InkList("Traits", currentInkStory);
-        foreach (string trait in traits)
-        {
-            currentTraits.AddItem(trait);
-        }
-        currentInkStory.variablesState["Traits"] = currentTraits;
-    }
-
-    private void LoadCharacter()
-    {
-        SetInkVariable("Name", playChar.characterName);
-        SetInkVariable("Surname", playChar.characterSurname);
-        SetInkVariable("Age", playChar.characterAge.ToString());
-        FillTraitList(playChar.prioritizedTraits);
-    }
-
     public void LoadDialoge()
     {
         if (i < inkJSONs.Count -1)
@@ -163,6 +139,7 @@ public class DialogeSystem : MonoBehaviour
         ContinueDialoge();
     }
 
+    //ink variables
     public Ink.Runtime.Object GetVariableState(string variableName)
     {
         Ink.Runtime.Object variableValue = null;
@@ -172,5 +149,30 @@ public class DialogeSystem : MonoBehaviour
             Debug.LogWarning("Ink Variable was null: " + variableName);
         }
         return variableValue;
+    }
+
+    private void SetInkVariable(string inkVar, string charVar)
+    {
+        currentInkStory.variablesState[inkVar] = charVar;
+    }
+
+
+    private void FillInktList(string inkListName, List<string> values)
+    {
+        var currentValues = new Ink.Runtime.InkList(inkListName, currentInkStory);
+        foreach (string trait in values)
+        {
+            currentValues.AddItem(trait);
+        }
+        currentInkStory.variablesState[inkListName] = currentValues;
+    }
+
+    private void LoadCharacter()
+    {
+        SetInkVariable("Name", playChar.characterName);
+        SetInkVariable("Surname", playChar.characterSurname);
+        SetInkVariable("Age", playChar.characterAge.ToString());
+        FillInktList("Traits", playChar.prioritizedTraits);
+        FillInktList("Visuals", playChar.visualTraits);
     }
 }

@@ -9,6 +9,7 @@ public class PlayerCharacter : ScriptableObject
     public string characterName;
     public string characterSurname;
     public List<string> prioritizedTraits;
+    public List<string> visualTraits;
 
     public List<Sprite> visualFeatures;
     public List<Color32> colorOfFeature;
