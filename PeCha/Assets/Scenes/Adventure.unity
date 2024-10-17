@@ -471,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214378591}
   - component: {fileID: 214378592}
+  - component: {fileID: 214378593}
   m_Layer: 0
   m_Name: DialogeManager
   m_TagString: Untagged
@@ -516,10 +517,24 @@ MonoBehaviour:
   loadGlobalsJSON: {fileID: 4900000, guid: 48c3edc0e2de24242ae6a57c242a2a03, type: 3}
   inkJSONs:
   - {fileID: 4900000, guid: 8961721b2ca810b43b0d6a94ecc12650, type: 3}
+  - {fileID: 4900000, guid: c778231659c7ccb48a7f9251a7fd41e8, type: 3}
   - {fileID: 4900000, guid: 8961721b2ca810b43b0d6a94ecc12650, type: 3}
   - {fileID: 4900000, guid: 4348b04aea7d6d84b8e143944bdca5f6, type: 3}
   inkVariables: 
   i: 0
+  playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
+--- !u!114 &214378593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214378590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9744bdb672c3917428bc05b4edde17a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
 --- !u!1 &264827180
 GameObject:

@@ -12,6 +12,7 @@ public class ChooseCharacter : MonoBehaviour
     [SerializeField] TMP_InputField firstName;
     [SerializeField] TMP_InputField surName;
     [SerializeField] List<TraitData> allTraits;
+    [SerializeField] TMP_Dropdown pronoun;
     [SerializeField] public PlayerCharacter playChar;
     WarningPopUp warningPopUp;
     CreatorCam cam;
@@ -55,6 +56,12 @@ public class ChooseCharacter : MonoBehaviour
             playChar.characterAge = 0;
             warningPopUp.ageGiven = false;
         }
+    }
+
+    public void GetPronoun()
+    {
+        int pickedEntryIndex = pronoun.value;
+        playChar.characterPronoun = pronoun.options[pickedEntryIndex].text;
     }
 
     public void GetName()

@@ -18,12 +18,13 @@ public class DialogeSystem : MonoBehaviour
     [SerializeField] private List<TextAsset> inkJSONs;
     [SerializeField] string inkVariables;
     public int i; //Where we are in the story/which story to load from inkJSON list
-    private Story currentInkStory;
-    private InkVariables inkVars;
+    public Story currentInkStory;
+    private InkGlobal inkGlobal;
     private bool dialogeIsPlaying;
 
     [Header("SriptRefs")]
-    private static DialogeSystem instance;
+    public static DialogeSystem instance;
+    PlayerVars playVars;
     [SerializeField] PlayerCharacter playChar;
 
     private void Awake()
@@ -33,7 +34,8 @@ public class DialogeSystem : MonoBehaviour
         else
             Debug.LogWarning("More than one DialogeSystem");
 
-        inkVars = new InkVariables(loadGlobalsJSON);
+        inkGlobal = new InkGlobal(loadGlobalsJSON);
+        playVars = GetComponent<PlayerVars>();
     }
 
     private void Start()
@@ -83,15 +85,14 @@ public class DialogeSystem : MonoBehaviour
         NPCDialogePanel.SetActive(true);
         currentInkStory = new Story(inkJSON.text);
         dialogeIsPlaying = true;
-        inkVars.StartListening(currentInkStory);
-        LoadCharacter();
-
+        inkGlobal.StartListening(currentInkStory);
+        playVars.LoadCharacter();
         ContinueDialoge();       
     }
 
     public void ExitDialoge()
     {
-        inkVars.StopListening(currentInkStory);
+        inkGlobal.StopListening(currentInkStory);
         dialogeIsPlaying = false;
         NPCDialogePanel.SetActive(false);
         NPCDialogeText.text = "";
@@ -103,10 +104,50 @@ public class DialogeSystem : MonoBehaviour
         {
             NPCDialogeText.text = currentInkStory.Continue();
             DisplayChoices();
+            HandleTags(currentInkStory.currentTags);
         }
         else
         {
             ExitDialoge();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach(string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(":");
+            string tagKey = splitTag[0];
+            string tagValue = splitTag[1];
+            
+            switch(tagKey)
+            {
+                case "System":
+                    SystemTag(tagValue);
+                    break;
+                case "Layout":
+                    break;
+                default:
+                    Debug.LogWarning("something went wrong with the TagKeys. Tagkey: " + tagKey);
+                    break;
+
+            }
+        }
+    }
+
+    private void SystemTag(string value)
+    {
+        switch (value)
+        {
+            case "LoadNextStory":
+                Debug.Log("loading next scene.");
+                break;
+            case "CharacterCreator":
+                Debug.Log("Back to CharacterCreator");
+                break;
+            default:
+                Debug.LogWarning("Something went wrong with the Value. System Value: " + value);
+                break;
         }
     }
 
@@ -143,36 +184,11 @@ public class DialogeSystem : MonoBehaviour
     public Ink.Runtime.Object GetVariableState(string variableName)
     {
         Ink.Runtime.Object variableValue = null;
-        inkVars.variables.TryGetValue(variableName, out variableValue);
-        if(variableValue == null)
+        inkGlobal.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null)
         {
             Debug.LogWarning("Ink Variable was null: " + variableName);
         }
         return variableValue;
-    }
-
-    private void SetInkVariable(string inkVar, string charVar)
-    {
-        currentInkStory.variablesState[inkVar] = charVar;
-    }
-
-
-    private void FillInktList(string inkListName, List<string> values)
-    {
-        var currentValues = new Ink.Runtime.InkList(inkListName, currentInkStory);
-        foreach (string trait in values)
-        {
-            currentValues.AddItem(trait);
-        }
-        currentInkStory.variablesState[inkListName] = currentValues;
-    }
-
-    private void LoadCharacter()
-    {
-        SetInkVariable("Name", playChar.characterName);
-        SetInkVariable("Surname", playChar.characterSurname);
-        SetInkVariable("Age", playChar.characterAge.ToString());
-        FillInktList("Traits", playChar.prioritizedTraits);
-        FillInktList("Visuals", playChar.visualTraits);
     }
 }

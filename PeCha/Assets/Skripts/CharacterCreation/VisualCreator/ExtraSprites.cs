@@ -19,7 +19,7 @@ public class ExtraSprites : MonoBehaviour
     public void loadClothes(int index)
     {
         currentClothes = index;
-        clothesSpriteRen.sprite = savedClothes.Instance.allBodytypeClothes[CurrentBodyType()][currentClothes];
+        clothesSpriteRen.sprite = Clothes.Instance.allBodytypeClothes[CurrentBodyType()][currentClothes];
     }
 
     public void fixClothes()

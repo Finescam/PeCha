@@ -83,10 +83,13 @@ public class VisualCharacter : MonoBehaviour
         //clear list for good measures
         playChar.visualFeatures.Clear();
         playChar.colorOfFeature.Clear();
+        visLists.chosenSprites.Clear();
 
         //add sprites and colors to playerchar lists, to use later
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
+            int x = visLists.allSpriteLists[i].IndexOf(spriteRenderers[i].sprite);
+            visLists.chosenSprites.Add(x);
             playChar.visualFeatures.Add(spriteRenderers[i].sprite);
             playChar.colorOfFeature.Add(spriteRenderers[i].color);
         }
