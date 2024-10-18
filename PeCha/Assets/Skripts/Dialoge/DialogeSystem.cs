@@ -24,7 +24,8 @@ public class DialogeSystem : MonoBehaviour
 
     [Header("SriptRefs")]
     public static DialogeSystem instance;
-    PlayerVars playVars;
+    TagBehavior tagScript;
+    InkVars playVars;
     [SerializeField] PlayerCharacter playChar;
 
     private void Awake()
@@ -35,7 +36,8 @@ public class DialogeSystem : MonoBehaviour
             Debug.LogWarning("More than one DialogeSystem");
 
         inkGlobal = new InkGlobal(loadGlobalsJSON);
-        playVars = GetComponent<PlayerVars>();
+        playVars = GetComponent<InkVars>();
+        tagScript = GetComponent<TagBehavior>();
     }
 
     private void Start()
@@ -104,52 +106,13 @@ public class DialogeSystem : MonoBehaviour
         {
             NPCDialogeText.text = currentInkStory.Continue();
             DisplayChoices();
-            HandleTags(currentInkStory.currentTags);
+            tagScript.HandleTags(currentInkStory.currentTags);
         }
         else
         {
             ExitDialoge();
         }
-    }
-
-    private void HandleTags(List<string> currentTags)
-    {
-        foreach(string tag in currentTags)
-        {
-            string[] splitTag = tag.Split(":");
-            string tagKey = splitTag[0];
-            string tagValue = splitTag[1];
-            
-            switch(tagKey)
-            {
-                case "System":
-                    SystemTag(tagValue);
-                    break;
-                case "Layout":
-                    break;
-                default:
-                    Debug.LogWarning("something went wrong with the TagKeys. Tagkey: " + tagKey);
-                    break;
-
-            }
-        }
-    }
-
-    private void SystemTag(string value)
-    {
-        switch (value)
-        {
-            case "LoadNextStory":
-                Debug.Log("loading next scene.");
-                break;
-            case "CharacterCreator":
-                Debug.Log("Back to CharacterCreator");
-                break;
-            default:
-                Debug.LogWarning("Something went wrong with the Value. System Value: " + value);
-                break;
-        }
-    }
+    } 
 
     private void DisplayChoices()
     {

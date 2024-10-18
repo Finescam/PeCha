@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ChooseCharacter : MonoBehaviour
@@ -15,24 +16,51 @@ public class ChooseCharacter : MonoBehaviour
     [SerializeField] TMP_Dropdown pronoun;
     [SerializeField] public PlayerCharacter playChar;
     WarningPopUp warningPopUp;
-    CreatorCam cam;
 
     public List<string> chosenTraits;
     public List<float> chosenTraitValues;
 
+    private static bool goingBackToCreator = false;
+
     private void Start()
     {
         warningPopUp = FindObjectOfType<WarningPopUp>().GetComponent<WarningPopUp>();
-        cam = FindObjectOfType<CreatorCam>().GetComponent<CreatorCam>();
+        if (goingBackToCreator)
+            ReloadCharacter();
+        else
+            goingBackToCreator = true;
+
+    }
+
+    public void ReloadCharacter()
+    {
+        age.text = playChar.characterAge.ToString();
+        firstName.text = playChar.characterName;
+        surName.text = playChar.characterSurname;
+        pronoun.value = playChar.chosenGender;
+
+        if (playChar.traitvalues.Count != 0)
+        {
+            int i = 0;
+            foreach (TraitData trait in allTraits)
+            {
+                trait.slider.value = playChar.traitvalues[i];
+                i++;
+            }
+        }
+
+        GetAge();
+        GetName();
+        GetSurName();
     }
 
     public void CreateCharacter()
     {
         GetChosenTraits();
-        //check if everything is filled out, else popup note
+        //check if everything is filled out before finishing, else popup note
         if(warningPopUp.checkWarningState())
         {
-            cam.moveWindowsLeft();
+           SceneManager.LoadScene("Adventure");
         }
     }
 
@@ -61,6 +89,7 @@ public class ChooseCharacter : MonoBehaviour
     public void GetPronoun()
     {
         int pickedEntryIndex = pronoun.value;
+        playChar.chosenGender = pickedEntryIndex;
         playChar.characterPronoun = pronoun.options[pickedEntryIndex].text;
     }
 
@@ -96,9 +125,11 @@ public class ChooseCharacter : MonoBehaviour
     {
         chosenTraits.Clear();
         chosenTraitValues.Clear();
+        playChar.traitvalues.Clear();
 
         foreach (TraitData trait in allTraits)
         {
+            playChar.traitvalues.Add(trait.slider.value);
             trait.UpdateChosenTrait();
 
             if (trait.usingTrait)
@@ -112,10 +143,10 @@ public class ChooseCharacter : MonoBehaviour
         var combinedList = chosenTraits.Zip(chosenTraitValues, (traits, values) => new { Trait = traits, Value = values });
         var sortedList = combinedList.OrderByDescending(item => item.Value).ToList();
 
-        playChar.prioritizedTraits = sortedList.Select(item => item.Trait).ToList();
+        playChar.characterTraits = sortedList.Select(item => item.Trait).ToList();
 
         //check if at least one trait was chosen
-        if (playChar.prioritizedTraits.Count >= 1)
+        if (playChar.characterTraits.Count >= 1)
             warningPopUp.traitChosen = true;
         else
             warningPopUp.traitChosen = false;

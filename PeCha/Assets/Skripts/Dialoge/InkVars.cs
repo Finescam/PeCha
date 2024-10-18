@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 
-public class PlayerVars : MonoBehaviour
+public class InkVars : MonoBehaviour
 {
     [SerializeField] PlayerCharacter playChar;
 
@@ -38,7 +38,7 @@ public class PlayerVars : MonoBehaviour
         SetInkVariable("Surname", playChar.characterSurname);
         SetInkVariable("Age", playChar.characterAge.ToString());
         SetPrononce();
-        FillInktList("Traits", playChar.prioritizedTraits);
+        FillInktList("Traits", playChar.characterTraits);
         FillInktList("Visuals", playChar.visualTraits);
     }
 }

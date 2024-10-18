@@ -8,7 +8,7 @@ public class TraitData : MonoBehaviour
 {
     [Header("Visuals")]
     [SerializeField] Toggle toggle;
-    [SerializeField] Slider slider;
+    [SerializeField] public Slider slider;
     [SerializeField] TMP_Text traitAText;
     [SerializeField] TMP_Text traitBText;
     [SerializeField] Image traitPanel;

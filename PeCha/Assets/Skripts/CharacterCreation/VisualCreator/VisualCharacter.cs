@@ -16,6 +16,8 @@ public class VisualCharacter : MonoBehaviour
 
     public int currentVisual = 0;
 
+    private static bool goingBackToCreator;
+
     private void Start()
     {
         exSprites = GetComponent<ExtraSprites>();
@@ -23,7 +25,14 @@ public class VisualCharacter : MonoBehaviour
         coloring = this.GetComponent<Coloring>();
         //start on bodys because its the deafault currentValue and else it would shoot out of range exceptions.
         ChooseVisual(0);
-        goToDefaultCharacter();
+
+        if(!goingBackToCreator)
+        {
+            goToDefaultCharacter();
+            goingBackToCreator = true;
+        }
+        else
+            ReloadCharacter();
     }
 
     private void goToDefaultCharacter()
@@ -37,6 +46,24 @@ public class VisualCharacter : MonoBehaviour
             sprite.color = visLists.allColorLists[i][0];
             i++;
         }
+        exSprites.LoadAccordingEyes();
+    }
+
+    private void ReloadCharacter()
+    {
+        //visual features
+        int i = 0;
+        foreach (SpriteRenderer sprite in spriteRenderers)
+        {
+            if (playChar.visualFeatures.Count > 0)
+            {
+                sprite.sprite = playChar.visualFeatures[i];
+                if (i < playChar.colorOfFeature.Count)
+                    sprite.color = playChar.colorOfFeature[i];
+                i++;
+            }
+        }
+        exSprites.fixClothes();
         exSprites.LoadAccordingEyes();
     }
 

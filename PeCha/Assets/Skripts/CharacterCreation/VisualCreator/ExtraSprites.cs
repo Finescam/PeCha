@@ -8,7 +8,7 @@ public class ExtraSprites : MonoBehaviour
     VisualCharacter visChar;
     public SpriteRenderer clothesSpriteRen;
     public SpriteRenderer eyesSpriteRen;
-    private int currentClothes;
+    private static int currentClothes;
 
     private void Awake()
     {

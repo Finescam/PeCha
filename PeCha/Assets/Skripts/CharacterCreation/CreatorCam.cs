@@ -5,7 +5,6 @@ using UnityEngine;
 public class CreatorCam : MonoBehaviour
 {
     [SerializeField] GameObject allWindows;
-    [SerializeField] GameObject screenmid;
 
     public void moveWindowsLeft()
     {
