@@ -9,9 +9,9 @@ public class loadPlayerCharacter : MonoBehaviour
 
     private void LoadFrontCharacter()
     {
-        for (int i = 0; i < playChar.visualFeatures.Count; i++)
+        for (int i = 0; i < playChar.basicVisualFeatures.Count; i++)
         {
-            playerSprites[i].sprite = playChar.visualFeatures[i];
+            playerSprites[i].sprite = playChar.basicVisualFeatures[i];
             if (i< playChar.colorOfFeature.Count)
             playerSprites[i].color = playChar.colorOfFeature[i];
         }

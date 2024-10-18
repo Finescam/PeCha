@@ -55,9 +55,9 @@ public class VisualCharacter : MonoBehaviour
         int i = 0;
         foreach (SpriteRenderer sprite in spriteRenderers)
         {
-            if (playChar.visualFeatures.Count > 0)
+            if (playChar.basicVisualFeatures.Count > 0)
             {
-                sprite.sprite = playChar.visualFeatures[i];
+                sprite.sprite = playChar.basicVisualFeatures[i];
                 if (i < playChar.colorOfFeature.Count)
                     sprite.color = playChar.colorOfFeature[i];
                 i++;
@@ -108,19 +108,22 @@ public class VisualCharacter : MonoBehaviour
     public void AcceptVisuals()
     {
         //clear list for good measures
-        playChar.visualFeatures.Clear();
+        playChar.basicVisualFeatures.Clear();
+        playChar.chosenVisualFeatures.Clear();
         playChar.colorOfFeature.Clear();
-        visLists.chosenSprites.Clear();
 
         //add sprites and colors to playerchar lists, to use later
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
             int x = visLists.allSpriteLists[i].IndexOf(spriteRenderers[i].sprite);
-            visLists.chosenSprites.Add(x);
-            playChar.visualFeatures.Add(spriteRenderers[i].sprite);
+            playChar.chosenVisualFeatures.Add(x);
+            playChar.basicVisualFeatures.Add(spriteRenderers[i].sprite);
             playChar.colorOfFeature.Add(spriteRenderers[i].color);
         }
-        playChar.visualFeatures.Add(exSprites.eyesSpriteRen.sprite);
-        playChar.visualFeatures.Add(exSprites.clothesSpriteRen.sprite);
+        //eyes has the same index as iris, so i add eye index extra
+        playChar.basicVisualFeatures.Add(exSprites.eyesSpriteRen.sprite);
+        playChar.chosenVisualFeatures.Add(visLists.irisSprites.IndexOf(spriteRenderers[2].sprite));
+        playChar.basicVisualFeatures.Add(exSprites.clothesSpriteRen.sprite);
+        playChar.chosenVisualFeatures.Add(exSprites.clothIndex);
     }
 }

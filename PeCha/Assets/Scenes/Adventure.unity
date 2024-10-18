@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogeUI: {fileID: 151662368}
+  DialogeText: {fileID: 516576441}
   choicesBG: {fileID: 2040736161}
   choicesUI:
   - {fileID: 1275977514}
@@ -585,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634c1cc0ca1cb834387276808660cd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layoutAnimator: {fileID: 1260218563}
   NPCSprite: {fileID: 1387877507}
   PlayerSprite: {fileID: 358044482}
 --- !u!1 &264827180
@@ -821,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &358044483
 Transform:
   m_ObjectHideFlags: 0

@@ -16,7 +16,6 @@ public class VisualLists : MonoBehaviour
     public List<Sprite> detailSprites;
     public List<Sprite> accessorySprites;
     public List<List<Sprite>> allSpriteLists;
-    public List<int> chosenSprites;
 
     public List<Color32> bodyColor;
     public List<Color32> hairColor;

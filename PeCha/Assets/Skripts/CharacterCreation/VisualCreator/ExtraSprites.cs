@@ -9,6 +9,7 @@ public class ExtraSprites : MonoBehaviour
     public SpriteRenderer clothesSpriteRen;
     public SpriteRenderer eyesSpriteRen;
     private static int currentClothes;
+    public int clothIndex;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class ExtraSprites : MonoBehaviour
     public void loadClothes(int index)
     {
         currentClothes = index;
+        clothIndex = index;
         clothesSpriteRen.sprite = Clothes.Instance.allBodytypeClothes[CurrentBodyType()][currentClothes];
     }
 
