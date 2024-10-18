@@ -35,7 +35,7 @@ public class VisualCharacter : MonoBehaviour
             ReloadCharacter();
     }
 
-    private void goToDefaultCharacter()
+    public void goToDefaultCharacter()
     {
         int i = 0;
         foreach (SpriteRenderer sprite in spriteRenderers)
@@ -47,6 +47,7 @@ public class VisualCharacter : MonoBehaviour
             i++;
         }
         exSprites.LoadAccordingEyes();
+        exSprites.fixClothes();
     }
 
     private void ReloadCharacter()
