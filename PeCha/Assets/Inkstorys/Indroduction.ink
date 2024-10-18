@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-Hi, my name is {Name} {Surname}. I am currently {Age} years old.
+Hi, my name is {Name} {Surname}. I am currently {Age} years old. #Layout:Player
 I have a problem. 
 {
     - Traits has Realistisch:

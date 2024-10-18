@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TagBehavior : MonoBehaviour
 {
@@ -50,14 +51,30 @@ public class TagBehavior : MonoBehaviour
         switch (value)
         {
             case "NPC":
-                Debug.Log("NPC is speaking.");
+                SetLayoutNPC(true);
                 break;
             case "Player":
-                Debug.Log("Player is speaking");
+                SetLayoutNPC(false);
                 break;
             default:
                 Debug.LogWarning("Something went wrong with the Value. System Value: " + value);
                 break;
         }
     }
+
+    [SerializeField] Animator layoutAnimator;
+    [SerializeField] GameObject NPCSprite;
+    [SerializeField] GameObject PlayerSprite;
+
+    private void SetLayoutNPC(bool isNPC)
+    {
+        NPCSprite.SetActive(isNPC);
+        PlayerSprite.SetActive(!isNPC);
+
+        if (isNPC)
+            layoutAnimator.Play("Player");
+        else
+            layoutAnimator.Play("NPC");
+    }
+
 }

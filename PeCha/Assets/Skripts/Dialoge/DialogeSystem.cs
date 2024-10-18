@@ -7,9 +7,9 @@ using TMPro;
 public class DialogeSystem : MonoBehaviour
 {
     [Header("Visuals")]
-    [SerializeField] private GameObject NPCDialogePanel;
-    [SerializeField] private TextMeshProUGUI NPCDialogeText;
-    [SerializeField] private GameObject playerDialogePanel;
+    [SerializeField] private GameObject DialogeUI;
+    [SerializeField] TextMeshProUGUI DialogeText;
+    [SerializeField] private GameObject choicesBG;
     [SerializeField] private GameObject[] choicesUI;
     private TextMeshProUGUI[] choicesText;
 
@@ -43,7 +43,7 @@ public class DialogeSystem : MonoBehaviour
     private void Start()
     {
         dialogeIsPlaying = false;
-        NPCDialogePanel.SetActive(false);
+        DialogeUI.SetActive(false);
 
         //Aline choicestext with UI
         choicesText = new TextMeshProUGUI[choicesUI.Length];
@@ -84,7 +84,7 @@ public class DialogeSystem : MonoBehaviour
 
     public void StartDialoge(TextAsset inkJSON)
     {
-        NPCDialogePanel.SetActive(true);
+        DialogeUI.SetActive(true);
         currentInkStory = new Story(inkJSON.text);
         dialogeIsPlaying = true;
         inkGlobal.StartListening(currentInkStory);
@@ -96,15 +96,15 @@ public class DialogeSystem : MonoBehaviour
     {
         inkGlobal.StopListening(currentInkStory);
         dialogeIsPlaying = false;
-        NPCDialogePanel.SetActive(false);
-        NPCDialogeText.text = "";
+        DialogeUI.SetActive(false);
+        DialogeText.text = "";
     }
 
     private void ContinueDialoge()
     {
         if (currentInkStory.canContinue)
         {
-            NPCDialogeText.text = currentInkStory.Continue();
+            DialogeText.text = currentInkStory.Continue();
             DisplayChoices();
             tagScript.HandleTags(currentInkStory.currentTags);
         }
@@ -126,6 +126,7 @@ public class DialogeSystem : MonoBehaviour
         int index = 0;
         foreach (Choice choice in currentChoices)
         {
+            choicesBG.SetActive(true);
             choicesUI[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
@@ -139,6 +140,7 @@ public class DialogeSystem : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        choicesBG.SetActive(false);
         currentInkStory.ChooseChoiceIndex(choiceIndex);
         ContinueDialoge();
     }
