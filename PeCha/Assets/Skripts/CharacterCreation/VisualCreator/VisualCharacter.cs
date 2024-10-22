@@ -12,7 +12,8 @@ public class VisualCharacter : MonoBehaviour
     [SerializeField] PlayerCharacter playChar;
     private Coloring coloring;
     [SerializeField] List<GameObject> featureButtons;
-    [SerializeField] public List<SpriteRenderer> spriteRenderers; 
+    [SerializeField] public List<SpriteRenderer> spriteRenderers;
+    [SerializeField] SpriteRenderer clothesSprite;
 
     public int currentVisual = 0;
 
@@ -64,6 +65,7 @@ public class VisualCharacter : MonoBehaviour
                 i++;
             }
         }
+        clothesSprite.color = playChar.colorOfFeature[playChar.colorOfFeature.Count-1];
         exSprites.fixClothes();
         exSprites.LoadAccordingEyes();
     }
@@ -103,7 +105,10 @@ public class VisualCharacter : MonoBehaviour
     //Color in my sprite 
     public void ColorSprite(int index)
     {
-        spriteRenderers[currentVisual].color = visLists.allColorLists[currentVisual][index];
+        if (currentVisual < visLists.allColorLists.Count)
+            spriteRenderers[currentVisual].color = visLists.allColorLists[currentVisual][index];
+        else
+            clothesSprite.color = Clothes.Instance.clothColor[index];
     }
 
     public void AcceptVisuals()
@@ -124,7 +129,9 @@ public class VisualCharacter : MonoBehaviour
         //eyes has the same index as iris, so i add eye index extra
         playChar.basicVisualFeatures.Add(exSprites.eyesSpriteRen.sprite);
         playChar.chosenVisualFeatures.Add(visLists.irisSprites.IndexOf(spriteRenderers[2].sprite));
+        playChar.colorOfFeature.Add(Color.white);
         playChar.basicVisualFeatures.Add(exSprites.clothesSpriteRen.sprite);
         playChar.chosenVisualFeatures.Add(exSprites.clothIndex);
+        playChar.colorOfFeature.Add(clothesSprite.color);
     }
 }

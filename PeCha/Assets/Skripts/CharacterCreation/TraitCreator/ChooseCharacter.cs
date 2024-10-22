@@ -60,7 +60,7 @@ public class ChooseCharacter : MonoBehaviour
         //check if everything is filled out before finishing, else popup note
         if(warningPopUp.checkWarningState())
         {
-           SceneManager.LoadScene("Adventure");
+            SceneManager.LoadScene("Adventure");
         }
     }
 
@@ -123,6 +123,7 @@ public class ChooseCharacter : MonoBehaviour
 
     private void GetChosenTraits()
     {
+        //It sorts in case i want to make the slider value important later.
         chosenTraits.Clear();
         chosenTraitValues.Clear();
         playChar.traitvalues.Clear();

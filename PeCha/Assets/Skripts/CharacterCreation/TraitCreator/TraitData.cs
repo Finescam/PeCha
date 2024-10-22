@@ -14,6 +14,7 @@ public class TraitData : MonoBehaviour
     [SerializeField] Image traitPanel;
     Color enabledcolor = Color.white;
     Color disabledColor = Color.grey;
+    Animator anim;
 
     [Header("Values")]
     public bool usingTrait;
@@ -22,6 +23,11 @@ public class TraitData : MonoBehaviour
     public string traitB;
 
     public string chosenTrait;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -37,15 +43,20 @@ public class TraitData : MonoBehaviour
 
     private void UpdateUsing()
     {
-        if (traitValue == 0)
-        {
-            usingTrait = false;
-            traitPanel.color = disabledColor;
-        }        
-        else
+        if (traitValue > 0)
         {
             usingTrait = true;
-            traitPanel.color = enabledcolor;
+            anim.Play("TraitB");
+        }        
+        else if(traitValue < 0)
+        {
+            usingTrait = true;
+            anim.Play("TraitA");
+        }
+        else
+        {
+            usingTrait = false;
+            anim.Play("Neutral");
         }
            
     }

@@ -13,6 +13,7 @@ public class Clothes: MonoBehaviour
     public Sprite[] bodytype4Clothes;
     public Sprite[] bodytype5Clothes;
     public List<Sprite[]> allBodytypeClothes;
+    public List<Color32> clothColor;
 
     private void Awake()
     {

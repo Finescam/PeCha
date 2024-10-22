@@ -22,6 +22,11 @@ public class Coloring : MonoBehaviour
         }
     }
 
+    public void ColorClothes()
+    {
+        ColorButtonsIn(Clothes.Instance.clothColor);
+    }
+
     public void TurnButtonsOff()
     {
         foreach (Button colorButton in colorButtons)
