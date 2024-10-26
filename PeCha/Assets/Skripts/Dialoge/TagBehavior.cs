@@ -6,6 +6,10 @@ using TMPro;
 
 public class TagBehavior : MonoBehaviour
 {
+    [SerializeField] Animator layoutAnimator;
+    [SerializeField] GameObject NPCSprite;
+    [SerializeField] GameObject PlayerSprite;
+
     public void HandleTags(List<string> currentTags)
     {
         foreach (string tag in currentTags)
@@ -48,6 +52,7 @@ public class TagBehavior : MonoBehaviour
 
     private void LayoutTag(string value)
     {
+        layoutAnimator.Play(value);
         switch (value)
         {
             case "NPC":
@@ -56,25 +61,23 @@ public class TagBehavior : MonoBehaviour
             case "Player":
                 SetLayoutNPC(false);
                 break;
+            case "Narrator":
+                break;
             default:
                 Debug.LogWarning("Something went wrong with the Value. System Value: " + value);
                 break;
         }
     }
 
-    [SerializeField] Animator layoutAnimator;
-    [SerializeField] GameObject NPCSprite;
-    [SerializeField] GameObject PlayerSprite;
-
     private void SetLayoutNPC(bool isNPC)
     {
         NPCSprite.SetActive(isNPC);
         PlayerSprite.SetActive(!isNPC);
 
-        if (isNPC)
-            layoutAnimator.Play("Player");
-        else
-            layoutAnimator.Play("NPC");
+        //if (isNPC)
+        //    layoutAnimator.Play("Player");
+        //else
+        //    layoutAnimator.Play("NPC");
     }
 
 }

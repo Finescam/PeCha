@@ -21,6 +21,7 @@ public class ChooseCharacter : MonoBehaviour
     public List<float> chosenTraitValues;
 
     private static bool goingBackToCreator = false;
+    static int pickedEntryIndex;
 
     private void Start()
     {
@@ -37,7 +38,7 @@ public class ChooseCharacter : MonoBehaviour
         age.text = playChar.characterAge.ToString();
         firstName.text = playChar.characterName;
         surName.text = playChar.characterSurname;
-        pronoun.value = playChar.chosenGender;
+        pronoun.value = pickedEntryIndex;
 
         if (playChar.traitvalues.Count != 0)
         {
@@ -88,9 +89,9 @@ public class ChooseCharacter : MonoBehaviour
 
     public void GetPronoun()
     {
-        int pickedEntryIndex = pronoun.value;
-        playChar.chosenGender = pickedEntryIndex;
-        playChar.characterPronoun = pronoun.options[pickedEntryIndex].text;
+        pickedEntryIndex = pronoun.value;
+        string[] pronounce = pronoun.options[pickedEntryIndex].text.Split("/");
+        playChar.characterPronoun = pronounce[0];
     }
 
     public void GetName()

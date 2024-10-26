@@ -2,7 +2,7 @@ INCLUDE globals.ink
 Hi, I am an NPC. #Layout:NPC
 I guess you are {Name}? 
 {   
-    -Traits has Unhöflich:
+    -Traits has Rude:
     + Who wants to know? #Layout:Player
     ->secondText
 }
@@ -12,11 +12,11 @@ Great! I Am X. #Layout:NPC
 
 ===secondText===
 What are your Prononce?#Layout:NPC
-+ [{Pron0}/{Pron1}]
++ [{{Pron == "They":They/Them} | {Pron == "He": He/Him}| {Pron == "She": She/Her}}]
 Great. Mine are x/x.
 ->third
 + [Choose for me.]
-You look like a {Pron0} to me.
+You look like a {Pron} to me.
 ->third
 + [I dont have any.]
 Then I can not refere to you.

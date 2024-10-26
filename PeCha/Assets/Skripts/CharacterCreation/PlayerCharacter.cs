@@ -6,8 +6,7 @@ using UnityEngine;
 public class PlayerCharacter : ScriptableObject
 {
     public int characterAge;
-    public string characterPronoun = "They/Them/Their";
-    public int chosenGender;
+    public string characterPronoun = "They";
     public string characterName;
     public string characterSurname;
     public List<float> traitvalues;

@@ -7,16 +7,6 @@ public class InkVars : MonoBehaviour
 {
     [SerializeField] PlayerCharacter playChar;
 
-    private void SetPrononce()
-    {
-        string[] pronounce = playChar.characterPronoun.Split("/");
-
-        for(int i = 0; i < pronounce.Length; i++)
-        {
-            SetInkVariable("Pron" + i, pronounce[i]);
-        }
-    }
-
     private void SetInkVariable(string inkVar, string charVar)
     {
         DialogeSystem.instance.currentInkStory.variablesState[inkVar] = charVar;
@@ -37,7 +27,7 @@ public class InkVars : MonoBehaviour
         SetInkVariable("Name", playChar.characterName);
         SetInkVariable("Surname", playChar.characterSurname);
         SetInkVariable("Age", playChar.characterAge.ToString());
-        SetPrononce();
+        SetInkVariable("Pron", playChar.characterPronoun);
         FillInktList("Traits", playChar.characterTraits);
         FillInktList("Visuals", playChar.visualTraits);
     }

@@ -1,8 +1,6 @@
 VAR Name = "character"
 VAR Surname = "surname"
 VAR Age = "100"
-VAR Pron0 = "They"
-VAR Pron1 = "Them"
-VAR Pron2 = "Their"
+VAR Pron = "They"
 LIST Visuals = Glasses 
-LIST Traits = Schüchtern, Selbstsicher, Humorvoll, Ernst, Charmant, Unhöflich, Abergläubisch, Realistisch
+LIST Traits = Anxious, Confident, Humorous, Serious, Charming, Rude, Superstitious, Sceptical, Inquisitive, Indifferent
