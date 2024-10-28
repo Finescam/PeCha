@@ -58,6 +58,7 @@ public class ChooseCharacter : MonoBehaviour
     public void CreateCharacter()
     {
         GetChosenTraits();
+        GetPronoun();
         //check if everything is filled out before finishing, else popup note
         if(warningPopUp.checkWarningState())
         {

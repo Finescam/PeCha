@@ -8,27 +8,20 @@ public class ButtonHighlight : MonoBehaviour
 {
     [SerializeField] public List<Button> groupedButtons;
     private Button thisButton;
-    public bool wasChosen;
 
     private void Awake()
     {
         thisButton= this.GetComponent<Button>();
     }
 
-    private void Start()
-    {
-        SetBasic();
-    }
-
-    private void SetBasic()
+    public void SetBasic()
     {
         ResetButtons(groupedButtons[0], groupedButtons[0].colors.disabledColor);
     }
 
-    //Doesnt work
-    public void ReloadChosen(Button rebutton, Color recolor)
+    public void ReloadChosen(Button rebutton, Color reColor)
     {
-        ResetButtons(rebutton,recolor);
+        ResetButtons(rebutton,reColor);
     }
 
     public void HighlightButton()
@@ -48,11 +41,9 @@ public class ButtonHighlight : MonoBehaviour
             ColorBlock cb = button.colors;
             cb.normalColor = myColor;
             button.colors = cb;
-            button.GetComponent<ButtonHighlight>().wasChosen = false;
         }
         ColorBlock tcb = myButton.colors;
         tcb.normalColor = thisButton.colors.selectedColor;
         myButton.colors = tcb;
-        wasChosen = true;
     }
 }

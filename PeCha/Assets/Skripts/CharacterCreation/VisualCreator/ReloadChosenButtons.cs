@@ -7,29 +7,39 @@ public class ReloadChosenButtons : MonoBehaviour
 {
     //useless
     [SerializeField] List<ButtonHighlight> buttonRepresentive;
+    [SerializeField] ButtonHighlight mainButton;
+    [SerializeField] PlayerCharacter playChar;
     private static bool cursedCheck;
 
-    private void Awake()
+    private void Start()
     {
-        if (cursedCheck)
-            ReloadChosenButton();
+        if(!cursedCheck)
+        {
+            cursedCheck = true;
+            foreach(ButtonHighlight bh in buttonRepresentive)
+            {
+                bh.SetBasic();
+            }
+            mainButton.SetBasic();
+            return;
+        }
+        else
+        ReloadChosenButton();
     }
 
+    int index;
     void ReloadChosenButton()
     {
-        cursedCheck = true;
-        foreach (ButtonHighlight buttonRep in buttonRepresentive)
+        mainButton.SetBasic();
+        foreach(ButtonHighlight bh in buttonRepresentive)
         {
-            foreach (Button button in buttonRep.groupedButtons)
-            {
-                ButtonHighlight bh = button.GetComponent<ButtonHighlight>();
-                if (!bh.wasChosen)
-                    return;
-                else
-                {
-                    bh.ReloadChosen(button, button.colors.disabledColor);
-                }
-            }
+            bh.ReloadChosen(bh.groupedButtons[ChosenVisual(index)], bh.groupedButtons[ChosenVisual(index)].colors.disabledColor);
+            index++;
         }
+    }
+
+    private int ChosenVisual(int i)
+    {
+        return playChar.chosenVisualFeatures[i] >= 0 ? playChar.chosenVisualFeatures[i] : 0;
     }
 }

@@ -13,35 +13,36 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   characterAge: 34
-  characterPronoun: He/Him/His
-  chosenGender: 1
-  characterName: Ghs
-  characterSurname: Sdf
+  characterPronoun: They
+  characterName: Sa
+  characterSurname: Sd
   traitvalues:
   - 1
-  - 0.6972499
-  - -0.70686835
-  - 0.44195592
+  - 1
+  - -1
+  - -1
+  - -0
   characterTraits:
-  - Selbstsicher
-  - "H\xF6flich"
-  - Ernst
-  - Realistisch
+  - Confident
+  - Rude
+  - Humorous
+  - Superstitious
   visualTraits: []
-  visualFeatures:
+  chosenVisualFeatures: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  basicVisualFeatures:
   - {fileID: 21300000, guid: cb12faac2ce14084b897c176d4297427, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 013ae514495ba78489cb09e3e8135c61, type: 3}
-  - {fileID: 21300000, guid: f16d64d4f562e804096d25d9c535af08, type: 3}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 49662214528920d4286d1f422fad668a, type: 3}
   - {fileID: 21300000, guid: baed49574b7c45148b29cd926e9463e5, type: 3}
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: aae77134a32771e408f7feb50610fc6f, type: 3}
-  - {fileID: 21300000, guid: 0dbfb400b3a653e42b186babaa41ce88, type: 3}
+  - {fileID: 21300000, guid: 05e50ff6b432fa540af04d64e8c2ccfb, type: 3}
   colorOfFeature:
   - serializedVersion: 2
-    rgba: 4291753983
+    rgba: 4291555071
   - serializedVersion: 2
     rgba: 4287861651
   - serializedVersion: 2
@@ -49,11 +50,14 @@ MonoBehaviour:
   - serializedVersion: 2
     rgba: 4287861651
   - serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   - serializedVersion: 2
     rgba: 4286414248
   - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
     rgba: 4294967295
   - serializedVersion: 2
     rgba: 4294967295
-  sideVisualFeatures: []
+  - serializedVersion: 2
+    rgba: 4294967295
