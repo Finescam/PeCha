@@ -7,6 +7,7 @@ using TMPro;
 public class TagBehavior : MonoBehaviour
 {
     [SerializeField] Animator layoutAnimator;
+    [SerializeField] loadPlayerCharacter loadPC;
     [SerializeField] GameObject NPCSprite;
     [SerializeField] GameObject PlayerSprite;
 
@@ -25,6 +26,9 @@ public class TagBehavior : MonoBehaviour
                     break;
                 case "Layout":
                     LayoutTag(tagValue);
+                    break;
+                case "PlayerAnim":
+                    LoadAnimation(tagValue);
                     break;
                 default:
                     Debug.LogWarning("something went wrong with the TagKeys. Tagkey: " + tagKey);
@@ -78,6 +82,18 @@ public class TagBehavior : MonoBehaviour
         //    layoutAnimator.Play("Player");
         //else
         //    layoutAnimator.Play("NPC");
-    }
+    }   
 
+    private void LoadAnimation(string value)
+    {
+        switch(value)
+        {
+            case "Fear":
+                loadPC.LoadFearCharacter();
+                break;
+            default:
+                loadPC.LoadFrontCharacter();
+                break;
+        }
+    }
 }

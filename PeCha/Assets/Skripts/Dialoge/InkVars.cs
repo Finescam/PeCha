@@ -12,6 +12,11 @@ public class InkVars : MonoBehaviour
         DialogeSystem.instance.currentInkStory.variablesState[inkVar] = charVar;
     }
 
+    private void SetInkNumbers(string inkVar, int charVar)
+    {
+        DialogeSystem.instance.currentInkStory.variablesState[inkVar] = charVar;
+    }
+
     private void FillInktList(string inkListName, List<string> values)
     {
         var currentValues = new Ink.Runtime.InkList(inkListName, DialogeSystem.instance.currentInkStory);
@@ -26,7 +31,7 @@ public class InkVars : MonoBehaviour
     {
         SetInkVariable("Name", playChar.characterName);
         SetInkVariable("Surname", playChar.characterSurname);
-        SetInkVariable("Age", playChar.characterAge.ToString());
+        SetInkNumbers("Age", playChar.characterAge);
         SetInkVariable("Pron", playChar.characterPronoun);
         FillInktList("Traits", playChar.characterTraits);
         FillInktList("Visuals", playChar.visualTraits);

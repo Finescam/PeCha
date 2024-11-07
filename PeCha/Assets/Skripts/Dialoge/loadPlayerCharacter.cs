@@ -7,7 +7,7 @@ public class loadPlayerCharacter : MonoBehaviour
     [SerializeField] PlayerCharacter playChar;
     [SerializeField] List<SpriteRenderer> playerSprites;
 
-    private void LoadFrontCharacter()
+    public void LoadFrontCharacter()
     {
         for (int i = 0; i < playChar.basicVisualFeatures.Count; i++)
         {
@@ -17,10 +17,16 @@ public class loadPlayerCharacter : MonoBehaviour
         }
     }
 
+    public void LoadFearCharacter()
+    {
+        for (int i = 0; i < Emotionsprites.Instance.fearCharacter.Count; i++)
+        {
+            playerSprites[i].sprite = Emotionsprites.Instance.fearCharacter[i];
+        }
+    }
+
     private void Awake()
     {
-
         LoadFrontCharacter();
-
     }
 }
