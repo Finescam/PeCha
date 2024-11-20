@@ -6,6 +6,7 @@ using TMPro;
 
 public class TagBehavior : MonoBehaviour
 {
+    [SerializeField] ExtraSprites exSprites;
     [SerializeField] Animator layoutAnimator;
     [SerializeField] loadPlayerCharacter loadPC;
     [SerializeField] GameObject NPCSprite;
@@ -90,10 +91,13 @@ public class TagBehavior : MonoBehaviour
         {
             case "Fear":
                 loadPC.LoadFearCharacter();
+                exSprites.loadClothes(exSprites.playChar.chosenVisualFeatures[exSprites.playChar.chosenVisualFeatures.Count - 1]);
                 break;
             default:
                 loadPC.LoadFrontCharacter();
+                exSprites.basicClothes();
                 break;
         }
+
     }
 }

@@ -38,7 +38,7 @@ public class Emotionsprites : MonoBehaviour
         for (int i = 0; i < allfearLists.Count; i++)
         {
                 fearCharacter.Add(allfearLists[i][playChar.chosenVisualFeatures[i]]);
-            //add all possible future emotions here
+            //for all possible future emotions just make a sprite sheet animation instead
         }
     }
 }

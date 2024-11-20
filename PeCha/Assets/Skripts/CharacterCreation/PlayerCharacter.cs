@@ -12,7 +12,8 @@ public class PlayerCharacter : ScriptableObject
     public List<float> traitvalues;
     public List<string> characterTraits;
     public List<string> visualTraits;
-
+    
+    public int currentBodytype;
     public List<int> chosenVisualFeatures;
     public List<Sprite> basicVisualFeatures;
     public List<Color32> colorOfFeature;

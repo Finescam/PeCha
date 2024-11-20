@@ -14,6 +14,7 @@ public class VisualCharacter : MonoBehaviour
     [SerializeField] List<GameObject> featureButtons;
     [SerializeField] public List<SpriteRenderer> spriteRenderers;
     [SerializeField] SpriteRenderer clothesSprite;
+    Clothes clothes;
 
     public int currentVisual = 0;
 
@@ -21,6 +22,7 @@ public class VisualCharacter : MonoBehaviour
 
     private void Start()
     {
+        clothes = FindAnyObjectByType<Clothes>().GetComponent<Clothes>();
         exSprites = GetComponent<ExtraSprites>();
         visLists = VisualLists.Instance;
         coloring = this.GetComponent<Coloring>();
@@ -108,7 +110,7 @@ public class VisualCharacter : MonoBehaviour
         if (currentVisual < visLists.allColorLists.Count)
             spriteRenderers[currentVisual].color = visLists.allColorLists[currentVisual][index];
         else
-            clothesSprite.color = Clothes.Instance.clothColor[index];
+            clothesSprite.color = clothes.clothColor[index];
     }
 
     public void AcceptVisuals()

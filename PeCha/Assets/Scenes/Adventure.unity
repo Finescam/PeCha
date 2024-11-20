@@ -585,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634c1cc0ca1cb834387276808660cd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exSprites: {fileID: 969200450}
   layoutAnimator: {fileID: 1260218563}
   loadPC: {fileID: 969200447}
   NPCSprite: {fileID: 1387877507}
@@ -1745,6 +1746,8 @@ GameObject:
   - component: {fileID: 969200446}
   - component: {fileID: 969200447}
   - component: {fileID: 969200448}
+  - component: {fileID: 969200450}
+  - component: {fileID: 969200449}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -1812,46 +1815,78 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d747d64ace416b4d888c32cb7576922, type: 3}
   - {fileID: 21300000, guid: 744f7b758313e04458630b559d3ffd84, type: 3}
   fearHair:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  - {fileID: 21300000, guid: 5d81c20390e31734a9c8aff2a6ee586f, type: 3}
+  - {fileID: 21300000, guid: 7cfff99e63a51db4e857cab28bd4dfe8, type: 3}
   fearEyes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d90589bcdfcff4246ad1b2c1bef8169e, type: 3}
+  - {fileID: 21300000, guid: 25813d7a2b3945d4089b2d839767ca03, type: 3}
   fearIris:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 7b8ed41ffca300043bf436b52b5c58e2, type: 3}
+  - {fileID: 21300000, guid: e63dac95dd8001346a6e45c956e1585e, type: 3}
   fearbrow:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  - {fileID: 21300000, guid: 99365af420fce1b4cb9850af9edea568, type: 3}
+  - {fileID: 21300000, guid: 94cc3c8f4c3799d42ae6b0a368a0fe52, type: 3}
   fearnose:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: e77d9898dbfc62b4a89f97aa1e14a5cf, type: 3}
+  - {fileID: 21300000, guid: 04922f969dd2e5b4080476e751f3dc01, type: 3}
+  - {fileID: 21300000, guid: 4c10848cfdfe194478eb8f202d77d899, type: 3}
   fearmouth:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: c4b2299d5c3b0f546bc5397f22e76fd3, type: 3}
+  - {fileID: 21300000, guid: 064a60637b540384ab3162169773ff81, type: 3}
   feardetail:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  - {fileID: 21300000, guid: 22c32f9b147ad3f409d4c485767ecf6c, type: 3}
+  - {fileID: 21300000, guid: 1dc8a0b87e430e1438a8897d70c8dea7, type: 3}
+  - {fileID: 21300000, guid: e41b90b10b42a634c8ec76b41d8e9fbb, type: 3}
+  - {fileID: 21300000, guid: db9c848437c6c794e80534e44d2c0586, type: 3}
+  - {fileID: 21300000, guid: c27962031ee31a54888247d76854c4bb, type: 3}
   fearaccessory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  - {fileID: 21300000, guid: a65b825eb624e60488b5365db9f85f02, type: 3}
   fearCharacter: []
+--- !u!114 &969200449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969200445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef37579d2b77974781e1fed4c9e69ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodytype0Clothes:
+  - {fileID: 21300000, guid: c1c759c75f775c64abd4f764309040a9, type: 3}
+  bodytype1Clothes:
+  - {fileID: 21300000, guid: 4b38b648752e5624ebaef2954d7db7d0, type: 3}
+  bodytype2Clothes:
+  - {fileID: 21300000, guid: 86a46beb23ab6184c9c56b0d4a0557c0, type: 3}
+  bodytype3Clothes:
+  - {fileID: 21300000, guid: bdbcfc9652c19f148ae38abab1a0aee1, type: 3}
+  bodytype4Clothes:
+  - {fileID: 21300000, guid: ff1971d37b428b54c91c562cd30a268f, type: 3}
+  bodytype5Clothes:
+  - {fileID: 21300000, guid: 44a866224d4b9e043b8d2d4c2fb4fcd2, type: 3}
+  clothColor: []
+--- !u!114 &969200450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969200445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b650325c7505f4ea9239af3c290bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
+  clothesSpriteRen: {fileID: 602342605}
+  eyesSpriteRen: {fileID: 648202842}
+  clothIndex: 0
 --- !u!1 &989294254
 GameObject:
   m_ObjectHideFlags: 0

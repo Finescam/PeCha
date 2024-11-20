@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-This was {Name} {Surname}. {Pron} {Pron == "They":were|was} {Age} years old at the time. #Layout:Narrator
+This is {Name} {Surname}. {Pron} {Pron == "They":were|was} {Age} years old at the time. #Layout:Narrator
 {
 -Traits has Indifferent:
     ... #Layout:Player
@@ -8,7 +8,7 @@ This was {Name} {Surname}. {Pron} {Pron == "They":were|was} {Age} years old at t
 ->Situation 
 -Traits has Rude:
     SHIT!  #Layout:Player #PlayerAnim:Fear
--else: AH! #Layout:Player
+-else: AH! #Layout:Player #PlayerAnim:Fear
 } 
 It happened again!
 + {Traits ^(Sceptical,Inquisitive, Confident)}[(Investigate)] ->Investigate
@@ -21,10 +21,10 @@ It happened again!
 
 
 === Investigate ===
-The Room lied before {Name} {Pron == "They":like they knew it.}{Pron == "He":like he knew it.}{Pron == "She":like she knew it.} #Layout:Narrator
+The Room lay before {Name} {Pron == "They":like they knew it.}{Pron == "He":like he knew it.}{Pron == "She":like she knew it.} #Layout:Narrator #PlayerAnim:default
 {Visuals ? Glasses: {Name} pushed {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} glasses up a little.}
 The tiny flat rented a few years ago. Usually home. 
-Except a book just flew bye. It had been the second time this week.
+Except a book just flew by. It had been the second time this week.
 {
     -Traits has Inquisitive:
     It was super exiting.
@@ -58,7 +58,7 @@ A book just flew by on its own. {Pron == "They": {Pron} were alone in the flat. 
 ->Situation
 
 ===Confront===
-{Traits ? Anxious: {Name} stepped forward but could't bring {Pron == "They":themselves}{Pron == "He":himself}{Pron == "She":herself} to speak. Fear, first pinning {Pron == "They":them}{Pron == "He":him}{Pron == "She":her} into place, then ushering {Pron == "They":them}{Pron == "He":him}{Pron == "She":her} to hide. -> Hide} {Name} stepped forward bravely. #Layout:Narrator
+{Traits ? Anxious: {Name} stepped forward but could't bring {Pron == "They":themselves}{Pron == "He":himself}{Pron == "She":herself} to speak. Fear, first pinning {Pron == "They":them}{Pron == "He":him}{Pron == "She":her} into place, then ushering {Pron == "They":them}{Pron == "He":him}{Pron == "She":her} to hide. -> Hide} {Name} stepped forward bravely. #Layout:Narrator #PlayerAnim:default
 The geography book, which just flew through the room lied on the floor, motionless.
     + {Traits ? (Rude, Confident)}[(Insult)] ->Insult
     + {Traits ? (Rude, Confident)}[(Negotiate)] ->Negotiate
@@ -73,8 +73,8 @@ The geography book, which just flew through the room lied on the floor, motionle
 }
 
 ===Insult===
-Listen here you little shit... {Traits^(Sceptical, Serious): I dont know who {Traits?Serious:or what} you are, but} if you don't stop whatever you are doing, {Traits^(Serious, Sceptical): I will call the cops on you.| {Traits^(Humorous, Superstitious): {Traits^(Sceptical,Serious): Or }I will call a ghosthunter{Traits?Serious:.| and incenseate the hell out of you.}|I might punch you into the next afterlife.}} #Layout:Player
-The book did not move, but {Name} felt an awful shiver run down {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} spine.#Layout:Narrator
+Listen here you little shit... {Traits^(Sceptical, Serious): I dont know who {Traits?Serious:or what} you are, but} if you don't stop whatever you are doing, {Traits^(Serious, Sceptical): I will call the cops on you.| {Traits^(Humorous, Superstitious): {Traits^(Sceptical,Serious): Or }I will call a ghosthunter{Traits?Serious:.| and incenseate the hell out of you.}|I might punch you into the next afterlife.}} #Layout:Player #PlayerAnim:default
+The book did not move, but {Name} felt an awful shiver run down {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} spine.#Layout:Narrator 
 {Traits!? Confident: {Pron} took a step back involuntarily{Traits?Sceptical:, feeling foolish.|.}| {Pron} took a deep breath{Traits?Sceptical: reminding {Pron == "They":themselfes}{Pron == "He":himself}{Pron == "She":herself} that there were nothing and noone there.|{Traits?Serious: not allowing {Pron == "They":themselfes}{Pron == "He":himself}{Pron == "She":herself} to lose composure.|.}}}
 ->Situation
 
@@ -97,36 +97,36 @@ As expected, there is no response but silence. #Layout:Narrator
 ->Situation
 
 ===Doubt===
-Listen, I know ghost do not exist. Could you stop playing fucking pranks on me now? {Traits?Serious: I will call the cops on you if you don't.} #Layout:Player
+Listen, I know ghost do not exist. Could you stop playing fucking pranks on me now? {Traits?Serious: I will call the cops on you if you don't.} #Layout:Player #PlayerAnim:default
 As expected, there is no response but silence. #Layout:Narrator
 {Name} really considered just calling the cops, but had no idea what to tell them exactly and doubted they would even believe {Pron == "They":them}{Pron == "He":him}{Pron == "She":her}. 
 ->Situation
 
 ===Accuse===
-Listen, I know you are a ghost. Is it fun to scare me like this? #Layout:Player
+Listen, I know you are a ghost. Is it fun to scare me like this? #Layout:Player #PlayerAnim:default
 As expected, there is no response but silence. #Layout:Narrator
 ->Situation
 
 
 ===Situation===
 {Name} is currently in a very confusing situation. #Layout:Narrator #PlayerAnim:default
-Since two months now some strage things had been happening in {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} flat. {Age>50:Something {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} had never experienced before, in all {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} years of living.}
+Since two months now some strange things had been happening in {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} flat. {Age>50:Something {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} had never experienced before, in all {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} years of living.}
 It started with things not being where they should be but at various curious locations.
 {Pron == "They":Their}{Pron == "He":His}{Pron == "She":Her} mobile phone in the fridge, keys on the kitchencupboard, soap under the sink instead of on it...
 {Traits ? Sceptical: {Name} had brushed it off as forgetfullness.|{Traits ? Superstitious: {Name} had immediately known it was a ghost or worse, a demon.|{Traits ? Indifferent:{Name} hadn't thought about it much.|It was weird but probably nothing, {Name} thought.}}}  
 But then even weirder stuff happend.
-The electrizity went crazy. Light switched on and off, power chargers stopped working and {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} often heard an electric ringing sound. 
-{Traits!?Superstitious: {Pron} of caused had checked the cables and even called a specialist, but everytime someone came looking, everything was fine.|{Pron} had checked every forum and book available and everything hinted at paranormal activity.}
+The electricity went crazy. Light switched on and off, power chargers stopped working and {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} often heard an electric ringing sound. 
+{Traits!?Superstitious: {Pron} of course had checked the cables and even called a specialist, but everytime an expert came looking, everything was fine.|{Pron} had checked every forum and book available and everything hinted to paranormal activity.}
 Lastly wilder stuff had happend. {Traits?Sceptical: Everything else {Name} could explain logically, with stress, forgetfullness and a power overload or something, but|Clearly} something was off. 
 {Pron} actively noticed stuff moving on its own. Once {Pron == "They":they}{Pron == "He":He}{Pron == "She":she} had even seen a shadow creeping through the room.
 That was the point {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} best friend had insisted, {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} should call a ghosthunter.
 {Traits^(Sceptical, Humorous):{Name} heavily concidered calling a therapist instead.}
 {Hidden:Carefully {Name} got to their feet again, stepping forward from behind the sofa. {Pron} didnt fancy to hide within their own flat forever.|{Name} looked at the geography book that had just flown across the room and sighed. This could not go on forever and moving was not an option.}
 {Pron} pulled out {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} smartphone and looked at the number of the ghosthunter, {Pron == "They":their bestfriend had given them.}{Pron == "He":his bestfriend had given him.}{Pron == "She":her bestfriend had given her.}
-+[(Call them)]
++[(Call them to move forward.)]
 {Traits?Sceptical: }
 ... #System:LoadNextStory
 ->END
-+[(Edit Character)]
++[(Edit Character and start again.)]
 #System:CharacterCreator
 ->END

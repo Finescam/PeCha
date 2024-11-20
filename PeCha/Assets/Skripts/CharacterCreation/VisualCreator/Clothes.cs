@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Clothes: MonoBehaviour
 {
-    public static Clothes Instance;
-
     public Sprite[] bodytype0Clothes;
     public Sprite[] bodytype1Clothes;
     public Sprite[] bodytype2Clothes;
@@ -17,9 +15,6 @@ public class Clothes: MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        Instance = this;
-
         FillAllListList();
     }
 

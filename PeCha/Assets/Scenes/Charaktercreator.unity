@@ -3808,6 +3808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373992992}
   - component: {fileID: 373992993}
+  - component: {fileID: 373992994}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -3883,6 +3884,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &373992994
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373992991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 334788d407df55248bcf529544d9ce03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &427415988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7730,7 +7752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1096613564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9957,7 +9979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4536c939260756e40ab1ce09737f6056, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc6b573ed004ba24cab815aee023e7a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13727,6 +13749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b650325c7505f4ea9239af3c290bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
   clothesSpriteRen: {fileID: 1016717327}
   eyesSpriteRen: {fileID: 973983720}
   clothIndex: 0

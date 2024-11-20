@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class Coloring : MonoBehaviour
 {
     [SerializeField] List<Button> colorButtons;
+    Clothes clothes;
 
     private void Start()
     {
+        clothes = FindAnyObjectByType<Clothes>().GetComponent<Clothes>();
         ColorButtonsIn(VisualLists.Instance.bodyColor);
     }
 
@@ -24,7 +26,7 @@ public class Coloring : MonoBehaviour
 
     public void ColorClothes()
     {
-        ColorButtonsIn(Clothes.Instance.clothColor);
+        ColorButtonsIn(clothes.clothColor);
     }
 
     public void TurnButtonsOff()
