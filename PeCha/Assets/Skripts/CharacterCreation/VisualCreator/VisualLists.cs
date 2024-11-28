@@ -8,6 +8,7 @@ public class VisualLists : MonoBehaviour
 
     public List<Sprite> bodySprites;
     public List<Sprite> hairSprites;
+    public List<Sprite> backHairSprites;
     public List<Sprite> eyeSprites;
     public List<Sprite> irisSprites;
     public List<Sprite> browSprites;
@@ -15,6 +16,7 @@ public class VisualLists : MonoBehaviour
     public List<Sprite> mouthSprites;
     public List<Sprite> detailSprites;
     public List<Sprite> accessorySprites;
+    public List<Sprite> beardSprites;
     public List<List<Sprite>> allSpriteLists;
 
     public List<Color32> bodyColor;
@@ -24,6 +26,7 @@ public class VisualLists : MonoBehaviour
     public List<Color32> noseColor;
     public List<Color32> mouthColor;
     public List<Color32> detailColor;
+    public List<Color32> beardColor;
     public List<List<Color32>> allColorLists;
 
     private void Awake()
@@ -38,12 +41,12 @@ public class VisualLists : MonoBehaviour
     {
         allSpriteLists = new List<List<Sprite>>
         {
-            bodySprites, hairSprites, irisSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites
+            bodySprites, hairSprites, irisSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites, beardSprites
         };
 
         allColorLists = new List<List<Color32>>
         {
-            bodyColor, hairColor, eyeColor, browColor, noseColor, mouthColor, detailColor
+            bodyColor, hairColor, eyeColor, browColor, noseColor, mouthColor, detailColor, beardColor
         };
     }
 }

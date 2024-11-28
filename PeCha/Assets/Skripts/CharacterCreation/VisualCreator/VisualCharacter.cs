@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VisualCharacter : MonoBehaviour
 {
-    // 0 = Body, 1 = Hair, 2 = Iris, 3 = Brows, 4 = Nose, 5 = Mouth, 6 = Details, 7 = Accessoiry, 8 = Eyes, 9 = Clothes
+    // 0 = Body, 1 = Hair, 2 = Iris, 3 = Brows, 4 = Nose, 5 = Mouth, 6 = Details, 7 = Accessoiry, 8 = Beard, 9 = Eyes 10 = Clothes
 
     VisualLists visLists;
     ExtraSprites exSprites;

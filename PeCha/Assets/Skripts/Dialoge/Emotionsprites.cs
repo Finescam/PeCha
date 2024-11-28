@@ -17,6 +17,7 @@ public class Emotionsprites : MonoBehaviour
     [SerializeField] List<Sprite> fearmouth;
     [SerializeField] List<Sprite> feardetail;
     [SerializeField] List<Sprite> fearaccessory;
+    [SerializeField] List<Sprite> fearbeard;
     private List<List<Sprite>> allfearLists;
     public List<Sprite> fearCharacter;
 
@@ -27,7 +28,7 @@ public class Emotionsprites : MonoBehaviour
 
         allfearLists = new List<List<Sprite>>
         {
-            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail,fearaccessory, fearEyes
+            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail,fearaccessory, fearbeard, fearEyes
         };
 
         LoadEmotions();

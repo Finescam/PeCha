@@ -9,6 +9,7 @@ public class ExtraSprites : MonoBehaviour
     [SerializeField] public PlayerCharacter playChar;
     public SpriteRenderer clothesSpriteRen;
     public SpriteRenderer eyesSpriteRen;
+    public SpriteRenderer backHairRen;
     private static int currentClothes;
     public int clothIndex;
     Clothes clothes;
@@ -42,6 +43,12 @@ public class ExtraSprites : MonoBehaviour
         eyesSpriteRen.sprite = visLists.eyeSprites[CurrentEyeType()];
     }
 
+    public void LoadAccordingHair()
+    {
+        backHairRen.sprite = visLists.backHairSprites[CurrentHairType()];
+        backHairRen.color = visChar.spriteRenderers[1].color;
+    }
+
     public int CurrentBodyType()
     {
         if (visLists != null)
@@ -55,5 +62,10 @@ public class ExtraSprites : MonoBehaviour
     private int CurrentEyeType()
     {
         return visLists.irisSprites.IndexOf(visChar.spriteRenderers[2].sprite);
+    }
+
+    private int CurrentHairType()
+    {
+        return visLists.hairSprites.IndexOf(visChar.spriteRenderers[1].sprite);
     }
 }
