@@ -1,6 +1,16 @@
 INCLUDE globals.ink
 
 This is name is {Name} {Surname}. {Pron} {Pron == "They": are | is} currently {Age} years old. #Layout:Narrator
+{
+    - Visuals has Male:
+    {Name} has a male body.
+    
+    - Visuals has Female:
+    {Name} has a female body.
+    
+    - else:
+    {Name} has no body at all.
+}
 I have a problem. #Layout:Player
 {
     - Traits has Sceptical:

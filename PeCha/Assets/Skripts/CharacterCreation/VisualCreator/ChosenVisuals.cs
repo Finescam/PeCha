@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ChosenVisuals : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<EffectVisual> effectVisuals;
+    [SerializeField] PlayerCharacter playChar;
 
-    // Update is called once per frame
-    void Update()
+    //fill visualTraits List in playChar with the Strings, that return true
+    public void FillChosenVisualList()
     {
-        
+        playChar.visualTraits.Clear();
+        int i = 0;
+        foreach(int visual in playChar.chosenVisualFeatures)
+        {
+            foreach (EffectVisual effect in effectVisuals)
+            {
+                if (effect.visList == i)
+                {
+                    if (visual >= effect.startIndex && visual <= effect.endIndex)
+                    {
+                        playChar.visualTraits.Add(effect.visName);
+                    }
+                }
+            }
+            i++;
+        }
     }
 }
