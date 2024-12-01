@@ -9971,6 +9971,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1985294352}
+        m_TargetAssemblyTypeName: ChosenVisuals, Assembly-CSharp
+        m_MethodName: FillChosenVisualList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1214465312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15429,6 +15441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985294349}
   - component: {fileID: 1985294348}
+  - component: {fileID: 1985294352}
   - component: {fileID: 1985294350}
   - component: {fileID: 1985294351}
   m_Layer: 0
@@ -15531,6 +15544,25 @@ MonoBehaviour:
   eyesSpriteRen: {fileID: 973983720}
   backHairRen: {fileID: 1210941968}
   clothIndex: 0
+--- !u!114 &1985294352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985294347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bffa2b27ddb9646833f486ad8eb8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectVisuals:
+  - {fileID: 11400000, guid: 7232b2b67b6cf3b4fa7aacbf0ddbce47, type: 2}
+  - {fileID: 11400000, guid: 7f24369cf9c24544d877d477376811e8, type: 2}
+  - {fileID: 11400000, guid: 7bf0ae5b35d44a04191bde4ef1046c02, type: 2}
+  - {fileID: 11400000, guid: 45553edcc32ed6a4d8bfe4132812a5c8, type: 2}
+  - {fileID: 11400000, guid: 4e8b9b0fe1c2fe94c957d6246731914f, type: 2}
+  playChar: {fileID: 11400000, guid: cf533e0a809e14f4294373c1afeb4464, type: 2}
 --- !u!1 &2005881311
 GameObject:
   m_ObjectHideFlags: 0

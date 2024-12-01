@@ -1,6 +1,7 @@
 INCLUDE globals.ink
 
 This is {Name} {Surname}. {Pron} {Pron == "They":were|was} {Age} years old at the time. #Layout:Narrator
+{Pron} just came home from a long day and then-
 {
 -Traits has Indifferent:
     ... #Layout:Player
@@ -49,7 +50,7 @@ The copy of an old school atlas lay motionless on the floor.
 VAR Hidden = false
 ===Hide===
 ~ Hidden = true
-{Name} hid behind a Sofa{Traits ^ (Confident, Sceptical): feeling very stupid. Like a coward.|.} {Age >60:{Pron == "They":Their}{Pron == "He":his}{Pron == "She":her} old bones grinded at the movement, giving away {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} location away immediatly.} #Layout:Narrator
+{Name} hid behind a Sofa{Visuals?LongHair: pushing a long strand of hair out of {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} face,}{Traits ^ (Confident, Sceptical): feeling very stupid. Like a coward.|.} {Age >60:{Pron == "They":Their}{Pron == "He":his}{Pron == "She":her} old bones grinded at the movement, giving away {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} location away immediatly.} #Layout:Narrator
 {Traits ? Sceptical: There wasn't even anything there, was there?, {Pron} thought. But...}
 A book just flew by on its own. {Pron == "They": {Pron} were alone in the flat. {Pron} were certain of it.|{Pron} was alone in the flat. {Pron} was certain of it.}
 {Traits ? Sceptical: Maybe it was just the wind or something., {Pron} thought, looking for a logical explaination.}
@@ -124,7 +125,7 @@ That was the point {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} b
 {Hidden:Carefully {Name} got to their feet again, stepping forward from behind the sofa. {Pron} didnt fancy to hide within their own flat forever.|{Name} looked at the geography book that had just flown across the room and sighed. This could not go on forever and moving was not an option.}
 {Pron} pulled out {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} smartphone and looked at the number of the ghosthunter, {Pron == "They":their bestfriend had given them.}{Pron == "He":his bestfriend had given him.}{Pron == "She":her bestfriend had given her.}
 +[(Call them to move forward.)]
-{Traits?Sceptical: }
+{Traits?Sceptical: {Pron} still couldn't quite belived it but...} {Pron} diled in the number. 
 ... #System:LoadNextStory
 ->END
 +[(Edit Character and start again.)]

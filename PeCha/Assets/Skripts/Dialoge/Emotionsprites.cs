@@ -10,6 +10,7 @@ public class Emotionsprites : MonoBehaviour
     //all possible fear animation Sprites
     [SerializeField] List<Sprite> fearBody;
     [SerializeField] List<Sprite> fearHair;
+    [SerializeField] List<Sprite> fearHairBack;
     [SerializeField] List<Sprite> fearEyes;
     [SerializeField] List<Sprite> fearIris;
     [SerializeField] List<Sprite> fearbrow;
@@ -28,7 +29,7 @@ public class Emotionsprites : MonoBehaviour
 
         allfearLists = new List<List<Sprite>>
         {
-            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail,fearaccessory, fearbeard, fearEyes
+            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail,fearaccessory, fearbeard, fearEyes, fearHairBack
         };
 
         LoadEmotions();

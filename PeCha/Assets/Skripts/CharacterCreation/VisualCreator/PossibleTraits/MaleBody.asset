@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b2f9a29c0238a4e8606e024932a0e5, type: 3}
   m_Name: MaleBody
   m_EditorClassIdentifier: 
-  visName: 
+  visName: Male
   visList: 0
   startIndex: 0
-  endIndex: 0
-  inUse: 0
+  endIndex: 2
