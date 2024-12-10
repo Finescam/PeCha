@@ -29,7 +29,7 @@ public class Emotionsprites : MonoBehaviour
 
         allfearLists = new List<List<Sprite>>
         {
-            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail,fearaccessory, fearbeard, fearEyes, fearHairBack
+            fearBody, fearHair, fearIris, fearbrow, fearnose, fearmouth,feardetail, fearbeard, fearaccessory, fearEyes, fearHairBack
         };
 
         LoadEmotions();

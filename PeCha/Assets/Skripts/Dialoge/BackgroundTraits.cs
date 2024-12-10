@@ -29,7 +29,7 @@ public class BackgroundTraits : MonoBehaviour
             sprite.gameObject.SetActive(false);
             sprite.color = CurrentColor();
 
-            //I dont want anxious specifically to color in with the rest, because it is supposed to glow.
+            //I dont want anxious specifically to color in with the rest, because it is supposed to glow. 
             if(sprite.gameObject.name == "Anxious")
             {
                 sprite.color = basic;

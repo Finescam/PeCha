@@ -15,8 +15,8 @@ public class VisualLists : MonoBehaviour
     public List<Sprite> noseSprites;
     public List<Sprite> mouthSprites;
     public List<Sprite> detailSprites;
-    public List<Sprite> accessorySprites;
     public List<Sprite> beardSprites;
+    public List<Sprite> accessorySprites;
     public List<List<Sprite>> allSpriteLists;
 
     public List<Color32> bodyColor;
@@ -41,7 +41,7 @@ public class VisualLists : MonoBehaviour
     {
         allSpriteLists = new List<List<Sprite>>
         {
-            bodySprites, hairSprites, irisSprites, browSprites, noseSprites, mouthSprites, detailSprites, accessorySprites, beardSprites
+            bodySprites, hairSprites, irisSprites, browSprites, noseSprites, mouthSprites, detailSprites, beardSprites, accessorySprites
         };
 
         allColorLists = new List<List<Color32>>

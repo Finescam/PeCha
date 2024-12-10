@@ -283,12 +283,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 59d3f4d9b0dfa6d4ab31e28be9e1c200, type: 3}
   - {fileID: 21300000, guid: e029e11804b6be848a2e49184e32f3e7, type: 3}
   - {fileID: 21300000, guid: a573637ef64effa43b187e2f835d1f9f, type: 3}
+  beardSprites:
+  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  - {fileID: 21300000, guid: 2edcde4a4ad722e48b0b9c4c78372b05, type: 3}
   accessorySprites:
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 21ba7712279fad347906cff893be9635, type: 3}
-  beardSprites:
-  - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
-  - {fileID: 21300000, guid: ef5759e542d0f6e4f8123a98d7eac9b1, type: 3}
   bodyColor:
   - serializedVersion: 2
     rgba: 4291555071
@@ -769,9 +769,9 @@ RectTransform:
   - {fileID: 1870924450}
   - {fileID: 1115949730}
   - {fileID: 1178602683}
-  - {fileID: 1450140255}
-  - {fileID: 629428547}
   - {fileID: 1205867069}
+  - {fileID: 629428547}
+  - {fileID: 1450140255}
   - {fileID: 1852127636}
   - {fileID: 1909443844}
   - {fileID: 1277716105}
@@ -5762,7 +5762,7 @@ GameObject:
   - component: {fileID: 629428549}
   - component: {fileID: 629428548}
   m_Layer: 5
-  m_Name: Beard
+  m_Name: Assesoiry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5876,7 +5876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 213f3f9ae85a10744baacbcf13bc6b5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb3f227f77f012a4fa90f6acb4bb2d50, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6336,7 +6336,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2edcde4a4ad722e48b0b9c4c78372b05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9263,7 +9263,7 @@ GameObject:
   - component: {fileID: 1178602685}
   - component: {fileID: 1178602684}
   m_Layer: 5
-  m_Name: Accessoiry
+  m_Name: Beard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9377,7 +9377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb3f227f77f012a4fa90f6acb4bb2d50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 213f3f9ae85a10744baacbcf13bc6b5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9637,7 +9637,7 @@ RectTransform:
   - {fileID: 1086800460}
   - {fileID: 1125119233}
   m_Father: {fileID: 67025370}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11590,7 +11590,7 @@ RectTransform:
   - {fileID: 774959541}
   - {fileID: 206789790}
   m_Father: {fileID: 67025370}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13015,6 +13015,7 @@ MonoBehaviour:
   - {fileID: 538567499}
   - {fileID: 44419753}
   - {fileID: 1876224156}
+  - {fileID: 1086800457}
   - {fileID: 774959545}
   - {fileID: 1428326124}
   mainButton: {fileID: 1078280033}
@@ -15472,8 +15473,8 @@ MonoBehaviour:
   - {fileID: 40007760}
   - {fileID: 115815058}
   - {fileID: 1115949729}
-  - {fileID: 1450140254}
   - {fileID: 1205867068}
+  - {fileID: 1450140254}
   - {fileID: 1909443843}
   spriteRenderers:
   - {fileID: 373992993}
@@ -15483,8 +15484,8 @@ MonoBehaviour:
   - {fileID: 1715916132}
   - {fileID: 92212599}
   - {fileID: 2119107018}
-  - {fileID: 863228367}
   - {fileID: 656975329}
+  - {fileID: 863228367}
   clothesSprite: {fileID: 1016717327}
   currentVisual: 0
 --- !u!4 &1985294349
