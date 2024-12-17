@@ -49,6 +49,9 @@ public class TagBehavior : MonoBehaviour
             case "CharacterCreator":
                 SceneManager.LoadScene(0);
                 break;
+            case "Quit":
+                Application.Quit();
+                break;
             default:
                 Debug.LogWarning("Something went wrong with the Value. System Value: " + value);
                 break;
@@ -61,10 +64,10 @@ public class TagBehavior : MonoBehaviour
         switch (value)
         {
             case "NPC":
-                SetLayoutNPC(true);
+                NPCSprite.SetActive(true);
                 break;
             case "Player":
-                SetLayoutNPC(false);
+                NPCSprite.SetActive(false);
                 break;
             case "Narrator":
                 break;

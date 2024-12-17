@@ -110,12 +110,13 @@ As expected, there is no response but silence. #Layout:Narrator
 
 
 ===Situation===
-{Name} is currently in a very confusing situation. #Layout:Narrator #PlayerAnim:default
+{Visuals!?Bald:{Pron} stepped forward and pushed {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} {Visuals?ShortHair:short }{Visuals?LongHair:long }hair back.|}
+{Name} is currently in a very {Traits?Inquisitive:interesting|{Traits?Indifferent:annoying|confusing}} situation. #Layout:Narrator #PlayerAnim:default
 Since two months now some strange things had been happening in {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} flat. {Age>50:Something {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} had never experienced before, in all {Pron == "They":their}{Pron == "He":his}{Pron == "She":her} years of living.}
-It started with things not being where they should be but at various curious locations.
-{Pron == "They":Their}{Pron == "He":His}{Pron == "She":Her} mobile phone in the fridge, keys on the kitchencupboard, soap under the sink instead of on it...
-{Traits ? Sceptical: {Name} had brushed it off as forgetfullness.|{Traits ? Superstitious: {Name} had immediately known it was a ghost or worse, a demon.|{Traits ? Indifferent:{Name} hadn't thought about it much.|It was weird but probably nothing, {Name} thought.}}}  
-But then even weirder stuff happend.
+It started with things not being where they should be but at various {Traits?Rude:fucked up|curious} locations.
+{Pron == "They":Their}{Pron == "He":His}{Pron == "She":Her} mobile phone in the fridge, keys inside the kitchen cupboard, soap under the sink instead of on it...
+{Traits ? Sceptical: {Name} had brushed it off as forgetfullness{Traits?Anxious: but you could never be too sure|.}.|{Traits ? Superstitious: {Name} had {Traits?Confident:immediately} known it was a ghost or worse, a demon{Traits?Anxious:, but {Name} had been to afraid to investigate much further.|.}|{Traits ? Indifferent:{Name} hadn't thought about it much.|It was weird but probably nothing.}}}  
+But then even {Traits?Rude: more fucked up|weirder} stuff happend.
 The electricity went crazy. Light switched on and off, power chargers stopped working and {Pron == "They":they}{Pron == "He":he}{Pron == "She":she} often heard an electric ringing sound. 
 {Traits!?Superstitious: {Pron} of course had checked the cables and even called a specialist, but everytime an expert came looking, everything was fine.|{Pron} had checked every forum and book available and everything hinted to paranormal activity.}
 Lastly wilder stuff had happend. {Traits?Sceptical: Everything else {Name} could explain logically, with stress, forgetfullness and a power overload or something, but|Clearly} something was off. 
