@@ -14,14 +14,13 @@ INCLUDE globals.ink
 }
 
 Hello? #Layout:NPC
-~Traits+=Rude
 * {Traits?Rude} Wow[, really?], this is how you answer the phone? #Layout:Player
 It is. Can I help you, {Anrede}, or do you just want to berate me? #Layout:NPC
 ** Sorry. #Layout:Player
 Already forgotten. Jesaja Bevan here, how can I help you? #Layout:NPC
 ->Who
 ** Will you tell me your name? #Layout:Player
-How about you go first? #Layout:NPC
+Jesaja Bevan. Your turn. #Layout:NPC
 ->Who
 ** {Visuals?Female} {Pron!="She"} Don't call me that. #Layout:Player
 ->Gender
@@ -46,7 +45,7 @@ VAR genCor = false
 ===Gender===
 ~genCor = true
 Sorry? What? #Layout:NPC
-* My Prononce are[...] {Pron == "They":They/Them}{Pron == "He":He/Him}{Pron == "She":She/Her}, actually. I don't want you to call me {Anrede}.#Layout:Player
+* My prononce are[...] {Pron == "They":They/Them}{Pron == "He":He/Him}{Pron == "She":She/Her}, actually. I don't want you to call me {Anrede}.#Layout:Player
 Oh, sorry, my bad. Is {Pron == "They":..."Captain" okay?}{Pron == "He":"Sir" okay?}{Pron == "She":"Ma'am" okay?} #Layout:NPC
 **Yes. #Layout:Player
 {
@@ -60,7 +59,7 @@ Oh, sorry, my bad. Is {Pron == "They":..."Captain" okay?}{Pron == "He":"Sir" oka
     ~Sal = "Ms."
     ~Anrede = "Ma'am"
 }
-Alright, {Anrede}. Sorry again. Now, How can I help you? #Layout:NPC
+Alright, {Anrede}. Sorry again. Now, how can I help you? #Layout:NPC
 ->Who
 **No. #Layout:Player
 What should I call you then? #Layout:NPC
@@ -81,6 +80,7 @@ Just call me by my last name. #Layout:Player
 Just call me {Name}. #Layout:Player
     ~Sal = ""
     ~Anrede = Name
+    ~Surname = Name
 --- Alright, {Anrede},{Anrede == Name: you can call me Jesaja then. How can I help you now?| how can I help you now?} #Layout:NPC
 ->Who
 * Nevermind... #Layout:Player
@@ -88,12 +88,12 @@ Okay? Then... How can I help you, please? #Layout:NPC
 ->DONE
 
 ===Who===
-I am {Name} {Surname}{Traits?Anxious:, sorry for bothering you this late|{Traits?Confident:. I know it is late|it is nice to meet you}}, but... #Layout:Player
+I am {Name} {Surname}{Traits?Anxious:, sorry for bothering you this late|{Traits?Confident:. I know it is late| it is nice to meet you}}, but... #Layout:Player
 {
     -Traits?Sceptical: 
 {Name} pauses for a second, sighing. #Layout:Narrator
 Sorry, I know how rediculous this sounds, but my best friend suggested, I might call you, because I got a- {Traits?Serious:- (I can't believe I am saying this)} ... "ghostproblem".#Layout:Player
-    You're calling a ghosthunter, denying the existence of ghosts...  Don't worry, I don't think you're creazy. #Layout:NPC
+    You're calling a ghosthunter, denying the existence of ghosts...  Don't worry, I don't think you're crazy. #Layout:NPC
     -Traits?Superstitious:
     I just KNOW my appartment is haunted. {Traits!?Serious: I've already tried so much-} #Layout:Player
     alright alright! I believe you. #Layout:NPC
@@ -103,15 +103,13 @@ Sorry, I know how rediculous this sounds, but my best friend suggested, I might 
 Good thing, you are calling me, this is my area of expertice! #Layout:NPC
 Please tell me in detail what happend, {Sal} {Surname}.
 *Ok, so[...] this happend.#Layout:Player
-{Name} explained the situation in great detail. #Layout:Narrator
-->DONE
-* {Traits?Charming} [Flirt.] #Layout:Player
-Why don't we talk about you first?
+* {Traits?Charming} [Flirt.] Why don't we talk about you first? #Layout:Player
 You sound cute.
 (Silence) #Layout:NPC
-{Anrede}, this is a buisness call.
+{Anrede}, this is a buisness call. Let's go back to the important part.
 * {Traits?(Rude, Sceptical)} [Doubt.]
 I still can't belive we are talking about this, like it's real. #Layout:Player
 {Anrede}, I understand, that this is a confusing situation, but I assure you, you made the right call. Literally. #Layout:NPC
--Anyways... #Layout:NPC
+Anyways... Please just tell me what happend.
+-{Name} explained the situation in great detail. #Layout:Narrator
 ->DONE

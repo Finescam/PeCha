@@ -64,7 +64,7 @@ public class DialogeSystem : MonoBehaviour
         if (currentInkStory.currentChoices.Count != 0)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || DialogeText.text== "")
         {
             if (currentInkStory != null)
                 ContinueDialoge();

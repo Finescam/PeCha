@@ -2419,7 +2419,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
   - {fileID: 21300000, guid: 5b9f827b3a9a99e4ea524b983a7fb839, type: 3}
-  - {fileID: 21300000, guid: ef5759e542d0f6e4f8123a98d7eac9b1, type: 3}
+  - {fileID: 21300000, guid: a3d8a6806439c484e874d6bde33e72d4, type: 3}
   fearEyes:
   - {fileID: 21300000, guid: d90589bcdfcff4246ad1b2c1bef8169e, type: 3}
   - {fileID: 21300000, guid: 25813d7a2b3945d4089b2d839767ca03, type: 3}
@@ -3492,7 +3492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1387877508
 SpriteRenderer:
   m_ObjectHideFlags: 0
